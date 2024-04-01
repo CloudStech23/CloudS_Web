@@ -1,0 +1,91 @@
+.leftside-design{
+    /* border: 1px solid red; */
+    padding: 15px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    /* color: white; */
+    background-color: #1e232e;
+}
+.inp-field{
+    font-weight: bold;
+}
+.map-style{
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+ 
+  
+.contact-info {
+    margin-bottom: 20px;
+    text-align: center;
+    
+   }
+  
+.contact-info i {
+    font-size: 48px;
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #1e232e;
+  }
+ .contact-info address,   .contact-info p {
+    margin-bottom: 0;
+    color: #000;
+  }
+  
+ .contact-info h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #999;
+  }
+  
+  .contact-info a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+   .contact-info a:hover {
+    color: #3498db;
+    transition: .3s;
+    
+  }
+  
+    .contact-address,   .contact-phone,  .contact-email {
+    margin-bottom: 20px;
+    /* border: 1px solid #ccc; */
+    height: 170px;
+    /* box-shadow:#e4e4e4 0px -11px 20px 0px; */
+  }
+  
+  @media (min-width: 768px) {
+      .contact-address,   .contact-phone,   .contact-email {
+      padding: 20px 0;
+    }
+}
+.contact-phone{
+    border-left: 1px solid #5b5d61 !important;
+    border-right: 1px solid #5b5d61 !important;
+}
+  
+   
+   
+
+.g-5{
+    --bs-gutter-x: 0rem !important;
+}
+.btn{
+    border: 2px solid white;
+    color:white
+}
+.btn:hover{
+    border: 2px solid #1e232e;
+    color:#1e232e;
+    background-color: white;
+    
+}
+   
+   
+  
+  
+ 
