@@ -1,31 +1,32 @@
 .navbar {
-    height: 60px; /* Adjust height as needed */
-     
-  }
-  
-  .navbar-shadow {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Fix navbar to top when scrolling */
-  .fixed-top {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow:-1px 1px 16px 0px #2c2c2c!important;
-  }
-  
-  /* Ensure dropdown works on hover */
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    z-index: 999;
-  }
- 
-.underline-hover:hover{
+  height: 60px; /* Adjust height as needed */
+  transition: height 0.3s ease, background-color 0.3s ease; /* Smooth transition for height and background color */
+}
+
+.navbar-shadow {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix navbar to top when scrolling */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: -1px 1px 16px 0px #2c2c2c!important;
+}
+
+/* Ensure dropdown works on hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+  z-index: 999;
+}
+
+.underline-hover:hover {
   text-decoration: underline !important;
 }
-   
-   
-  
-  
+
+/* Smooth appearance transition */
+.navbar-after {
+  height: auto !important; /* Allow dynamic height */
+}

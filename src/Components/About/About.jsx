@@ -1,4 +1,5 @@
 import React from "react";
+import aboutImg from '../Images/Team-cuate.png'
 
 function About() {
   return (
@@ -28,7 +29,7 @@ function About() {
   <div class="container">
     <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
       <div class="col-12 col-lg-6 col-xl-5">
-        <img class="img-fluid rounded" loading="lazy" src="./assets/img/about-img-1.jpg" alt="About 1"/>
+        <img class="img-fluid rounded" loading="lazy" src={aboutImg} alt="About 1"/>
       </div>
       <div class="col-12 col-lg-6 col-xl-7">
         <div class="row justify-content-xl-center">
