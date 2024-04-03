@@ -77,7 +77,7 @@ function Navbar() {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Solution
+                Solutions
               </a>
               <ul
                 className={`dropdown-menu dropdown-menu-end ${
@@ -105,9 +105,9 @@ function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to='/Career'>
                 Career
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/Support">

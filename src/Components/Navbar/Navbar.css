@@ -13,7 +13,6 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: -1px 1px 16px 0px #2c2c2c!important;
 }
 
 /* Ensure dropdown works on hover */
@@ -22,11 +21,12 @@
   z-index: 999;
 }
 
-.underline-hover:hover {
-  text-decoration: underline !important;
-}
+
 
 /* Smooth appearance transition */
 .navbar-after {
   height: auto !important; /* Allow dynamic height */
+  transition: .3s; /* Smooth transition for height and background color */
 }
+ 
+ 

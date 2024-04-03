@@ -1,12 +1,14 @@
 import React from "react";
-import img2 from "../Images/2.jpg";
-import Type from "./Type";
-import FadeOnScroll from "./motion";
+import WhoImg from "../Images/WhoWeimg.png";
+import Type from "../Animated/Type";
+import FadeOnScroll from "../Animated/motion";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Slider from 'react-slick';
-import img1 from '../Images/1.jpg'
+// import Slider from 'react-slick';
+// import img1 from '../Images/1.jpg'
 import img3 from '../Images/3.jpg'
+import contactImg from '../Images/contactus.png'
+import { Link } from "react-router-dom";
 
 
 function Home() {
@@ -52,22 +54,20 @@ function Home() {
               <FadeOnScroll>
                 <div className="my-5 text-center text-xl-start">
                   <h1 className="display-5 fw-bolder text-white mb-2 ">
-                    Welcom To CloudStry,
+                    Welcom To CloudStry!
                     <br />
                     <Type />
                   </h1>
                   <p className="lead fw-normal text-white-50 mb-4">
-                    Quickly design and customize responsive mobile-first sites
-                    with Bootstrap, the world’s most popular front-end
-                    open-source toolkit!
+                  Elevate your technology experience with Cloudstry Technologies , where expertise meets unparalleled commitment !!
                   </p>
                   <div className="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                    <a
+                    <Link
                       className="btn  btn-outline-primary btn-lg px-4 me-sm-3"
-                      href="#features"
+                      to='/Support'
                     >
                       Get Started
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </FadeOnScroll>
@@ -77,11 +77,14 @@ function Home() {
             <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
       {/* <Slider {...settings}> */}
         <div>
+          <FadeOnScroll>
+
           <img
             className="img-fluid rounded-3 my-5"
             src={img3}
             alt="..."
           />
+          </FadeOnScroll>
          </div>
         {/* <div>
           <img
@@ -112,12 +115,14 @@ function Home() {
                 className="position-relative overflow-hidden h-100"
                 style={{ minHeight: "400px" }}
               >
+                <FadeOnScroll animation='right'>
                 <img
-                  className="position-absolute w-100 h-100 "
-                  src={img2}
-                  alt=""
-                  style={{ objectFit: "cover" }}
-                />
+            className="img-fluid rounded-3 my-5"
+            src={WhoImg}
+            alt="..."
+          />
+                </FadeOnScroll>
+
 
                  
               </div>
@@ -135,16 +140,18 @@ function Home() {
                     </h1>
                   </h1>
 
-                  <p className="mb-5 lead">
-                  Robust IT infrastructure and proactive support are fundamental to ensuring business continuity and optimizing organizational efficiency. Unreliable technology and reactive IT responses can significantly hinder operational workflows.
+                  <p className="mb-2  lead" style={{fontWeight:'400'}}>
+                  Welcome to Cloudstry Technologies, a pioneering IT consultancy firm dedicated to propelling businesses towards digital excellence. We pride ourselves on being more than just an IT company; we are your strategic ally, committed to understanding your unique needs and crafting tailored solutions that drive tangible results.
+                  <p className="mb-4 lead">With a focus on innovation and expertise, we offer a comprehensive suite of services designed to meet the diverse demands of modern enterprises. From IT strategy consultancy and product management to QA and software services, our seasoned professionals bring a wealth of industry knowledge to the table, empowering you to make informed decisions that accelerate your business growth.</p>
+                   
                   </p>
 
-                  <a
-                    className="btn btn-outline-primary py-2 px-3"
-                    href="/contact.html"
+                  <Link
+                    className="about-btn py-2 px-3 rounded"
+                    to="/About-Us"
                   >
                     Learn More
-                  </a>
+                  </Link>
                 </div>
               </FadeOnScroll>
             </div>
@@ -152,16 +159,16 @@ function Home() {
         </div>
       </div>
 
-      <section className="py-5">
+      <section className="py-5" id="services">
         <div className="container px-5 my-5">
           <div className="row gx-5 justify-content-center">
             <div className="col-lg-8 col-xl-6">
               <FadeOnScroll>
                 <div className="text-center">
-                  <h2 className="fw-bolder">Services</h2>
-                  <p className="lead fw-normal text-muted mb-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Eaque fugit ratione dicta mollitia. Officiis ad.
+                <div className="d-inline-block rounded-pill bg-secondary text-white py-1 mb-4 px-3 my-auto">
+                     SOLUTIONS
+                  </div>                  <p className="lead fw-normal text-muted mb-5">
+                  Robust IT infrastructure and proactive support are fundamental to ensuring business continuity and optimizing organizational efficiency
                   </p>
                 </div>
               </FadeOnScroll>
@@ -181,7 +188,7 @@ function Home() {
                       className="text-decoration-none link-dark stretched-link"
                       href="#!"
                     >
-                      <h5 className="card-title mb-3  text-center">Service 1</h5>
+                      <h5 className="card-title mb-3 fw-bold h4  text-center">It Strategy Consultancy</h5>
                     </a>
                     <p className="card-text mb-0">
                       Some quick example text to build on the card title and
@@ -209,9 +216,7 @@ function Home() {
                       className="text-decoration-none link-dark stretched-link"
                       href="#!"
                     >
-                      <h5 className="card-title mb-3  text-center">
-                        Service 2
-                       </h5>
+                       <h5 className="card-title mb-3 fw-bold h4  text-center">Product Mangement & QA</h5>
                     </a>
                     <p className="card-text mb-0">
                       This text is a bit longer to illustrate the adaptive
@@ -238,9 +243,7 @@ function Home() {
                       className="text-decoration-none link-dark stretched-link"
                       href="#!"
                     >
-                      <h5 className="card-title mb-3 text-center">
-                        Service 3
-                      </h5>
+                       <h5 className="card-title mb-3 fw-bold h4  text-center">Software Service</h5>
                     </a>
                     <p className="card-text mb-0">
                       Some more quick example text to build on the card title
@@ -280,38 +283,34 @@ function Home() {
                     <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                       <i className="bi bi-pc-display-horizontal"></i>
                     </div>
-                    <h2 className="h5">Featured title</h2>
+                    <h2 className="h5">Enhancing Operational Efficiency</h2>
                     <p className="mb-0">
-                      Paragraph of text beneath the heading to explain the
-                      heading. Here is just a bit more text.
+                    Implementing streamlined processes and innovative technologies to optimize operations, reduce costs, and increase productivity
                     </p>
                   </div>
                   <div className="col mb-5 h-100">
                     <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                       <i className="bi bi-building"></i>
                     </div>
-                    <h2 className="h5">Featured title</h2>
+                    <h2 className="h5">Customer-Centric Solutions</h2>
                     <p className="mb-0">
-                      Paragraph of text beneath the heading to explain the
-                      heading. Here is just a bit more text.
+                    Developing tailored IT solutions and services focused on meeting the evolving needs of customers, enhancing satisfaction, and fostering long-term relationships
                     </p>
                   </div>
                   <div className="col mb-5 mb-md-0 h-100">
                     <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                       <i className="bi bi-toggles2"></i>
                     </div>
-                    <h2 className="h5">Featured title</h2>
+                    <h2 className="h5">Market Diversification</h2>
                     <p className="mb-0">
-                      Paragraph of text beneath the heading to explain the
-                      heading. Here is just a bit more text.
+                    Expanding into new markets and industries by diversifying product and service offerings, leveraging existing expertise and capabilities to address emerging market needs
                     </p>
                   </div>
                   <div className="col h-100">
                     <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
-                    <h2 className="h5">Featured title</h2>
+                    <h2 className="h5">Continuous Innovation</h2>
                     <p className="mb-0">
-                      Paragraph of text beneath the heading to explain the
-                      heading. Here is just a bit more text.
+                    Cultivating a culture of creativity and continuous improvement to stay at the forefront of technological advancements
                     </p>
                   </div>
                 </div>
@@ -328,7 +327,7 @@ function Home() {
               <FadeOnScroll animation="right">
                 <img
                   className="img-fluid rounded mb-5 mb-lg-0"
-                  src="https://dummyimage.com/600x400/343a40/6c757d"
+                  src={contactImg}
                   alt="..."
                 />
               </FadeOnScroll>
@@ -342,18 +341,17 @@ function Home() {
             <FadeOnScroll animation='left'>
 
               <h1 className="display-6 text-dark mb-3">
-                We extend our gratitude for your connection with us
+              We're grateful for your connection and extend our sincere thanks
               </h1>
             </FadeOnScroll>
               <FadeOnScroll animation='left'>
 
-              <p className="text-dark-50 mb-0">
-                We acknowledge receipt of your message and look forward to
-                further communication with you
+              <p className="text-dark-50 mb-4">
+              We have received your message and anticipate further communication with you
               </p>
-              <button className="btn btn-outline-primary mt-4 btn-lg px-4">
-                contact us
-              </button>
+              <Link to='/Support' className="cont-btn mt-4 btn-lg px-4 text-decoration-none">
+                contact us 
+              </Link>
               </FadeOnScroll>
             </div>
 
