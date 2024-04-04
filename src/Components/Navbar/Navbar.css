@@ -1,32 +1,5 @@
-.navbar {
-  height: 60px; /* Adjust height as needed */
-  transition: height 0.3s ease, background-color 0.3s ease; /* Smooth transition for height and background color */
+@media only screen and (max-width: 442px) {
+   .logoimg{
+    height: 2.7rem !important;
+   }
 }
-
-.navbar-shadow {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Fix navbar to top when scrolling */
-.fixed-top {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-}
-
-/* Ensure dropdown works on hover */
-.dropdown:hover .dropdown-menu {
-  display: block;
-  z-index: 999;
-}
-
-
-
-/* Smooth appearance transition */
-.navbar-after {
-  height: auto !important; /* Allow dynamic height */
-  transition: .3s; /* Smooth transition for height and background color */
-}
- 
- 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import LogoImg from '../Images/cloudslogo.png';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 import { Link } from 'react-router-dom';
+import '../Navbar/Navbar.css'
 
 function Navbar() {
   const [dropdownHovered, setDropdownHovered] = useState(false);
@@ -33,8 +34,8 @@ function Navbar() {
         <a className="navbar-brand" href="/">
           <img
             src={LogoImg}
-            className="img-fluid"
-            style={{ height: '3.5rem' }}
+            className="img-fluid logoimg"
+            style={{ height: '4rem' }}
             alt="Logo"
           />
         </a>

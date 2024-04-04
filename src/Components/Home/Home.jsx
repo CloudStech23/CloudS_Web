@@ -6,9 +6,12 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 // import Slider from 'react-slick';
 // import img1 from '../Images/1.jpg'
-import img3 from '../Images/3.jpg'
+import GIF from '../Images/bgGIf.gif'
 import contactImg from '../Images/contactus.png'
 import { Link } from "react-router-dom";
+import '../Home/Home.css'
+import homevideo from '../video/homepagevid.mp4'
+
 
 
 function Home() {
@@ -41,18 +44,17 @@ function Home() {
   };
   return (
     <div>
-      <header
-        className="py-5 vh-100"
-        style={{
-          background:
-            "linear-gradient(135deg, #1e232e 0%, #39424e 50%, #ffffff 100%)",
-        }}
-      >
-        <div className="container px-5">
-          <div className="row gx-5 align-items-center justify-content-center">
-            <div className="col-lg-8 col-xl-7 col-xxl-6">
-              <FadeOnScroll>
-                <div className="my-5 text-center text-xl-start">
+      <header className="   position-relative py-5 vh-100">
+      <video autoPlay muted loop id="video-bg" className="position-absolute top-0 start-0">
+        <source src={homevideo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="black-blur-overlay position-absolute top-0 start-0 w-100 h-100"></div>
+      <div className="container px-5 position-relative">
+        <div className="row gx-5 align-items-center justify-content-center">
+          <div className="col-lg-8 col-xl-7 col-xxl-6">
+          <FadeOnScroll>
+                <div className="my-5  text-center text-xl-start">
                   <h1 className="display-5 fw-bolder text-white mb-2 ">
                     Welcom To CloudStry!
                     <br />
@@ -71,41 +73,11 @@ function Home() {
                   </div>
                 </div>
               </FadeOnScroll>
-            </div>
-            {/* Existing Image */}
-
-            <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
-      {/* <Slider {...settings}> */}
-        <div>
-          <FadeOnScroll>
-
-          <img
-            className="img-fluid rounded-3 my-5"
-            src={img3}
-            alt="..."
-          />
-          </FadeOnScroll>
-         </div>
-        {/* <div>
-          <img
-            className="img-fluid rounded-3 my-5"
-            src={img2}
-            alt="..."
-          />
-        </div>
-        <div>
-          <img
-            className="img-fluid rounded-3 my-5"
-            src={img1}
-            alt="..."
-          />
-        </div>
-      </Slider> */}
-    </div>
-
           </div>
+          <div className="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img className="img-fluid rounded-3 my-5"  src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." /></div>
         </div>
-      </header>
+      </div>
+    </header>
 
       <div className="container-xxl mt-4 bg-light rounded py-5">
         <div className="container">
