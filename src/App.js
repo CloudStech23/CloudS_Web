@@ -16,7 +16,7 @@ import Career from './Components/Career/Career';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename='/C_S_R'>
 
     <div className="App">
       <div className='component-navbar' >
