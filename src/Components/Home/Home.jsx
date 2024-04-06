@@ -135,7 +135,7 @@ function Home() {
                       <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">It Strategy Consultancy</h5>
                     </a>
                     <p className="card-text mb-0 text-dark">
-                    At our consultancy firm, we specialize in providing IT strategy consulting services to organizations of all sizes. Our team of experienced consultants collaborates closely with your organization to develop a comprehensive IT strategy aligned with your business goals and objectives. Through our tailored approach, we ensure that your technology initiatives drive measurable results and sustainable growth.
+                    At our consultancy firm, We specialize in providing IT strategy consulting services to organizations of all sizes. Our team of experienced consultants collaborates closely with your organization to develop a comprehensive IT strategy aligned with your business goals and objectives. Through our tailored approach, we ensure that your technology initiatives drive measurable results and sustainable growth.
                     </p>
                   </div>
                   <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
