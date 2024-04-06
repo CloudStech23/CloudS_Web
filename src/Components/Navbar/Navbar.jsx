@@ -29,14 +29,14 @@ function Navbar() {
       style={{ backgroundColor: '#1e232e', transition: '.3s' }} // Remove transition
     >
       <div className={`container px-5 ${isScrolled ? 'nav-pad':''}`}>
-        <a className="navbar-brand" href="/">
+        <Link className="navbar-brand" to="/">
           <img
             src={LogoImg}
             className="img-fluid logoimg"
             style={{ height: '4rem' }}
             alt="Logo"
           />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
