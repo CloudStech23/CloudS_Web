@@ -80,7 +80,7 @@ function About() {
                             </svg>
                           </div>
                           <div>
-                            <h2 class="h4 mb-3">Public Utility</h2>
+                            <h2 class="h4 mb-3">Public Utilities</h2>
                             <p class="text-secondary mb-0">
                               Revolutionizing public utility with advanced
                               technology solutions
