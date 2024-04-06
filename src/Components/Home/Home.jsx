@@ -278,7 +278,7 @@ function Home() {
                   to="/Support"
                   className="cont-btn mt-4 btn-lg px-4 text-decoration-none"
                 >
-                  contact us
+                  contact Us
                 </Link>
               </FadeOnScroll>
             </div>
