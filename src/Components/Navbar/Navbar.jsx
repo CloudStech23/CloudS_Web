@@ -2,18 +2,18 @@ import React, { useState, useEffect } from 'react';
 import LogoImg from '../Images/cloudslogo.png';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 import { Link } from 'react-router-dom';
-import '../Navbar/Navbar.css'
+import '../Navbar/Navbar.css';
 
 function Navbar() {
-  const [dropdownHovered, setDropdownHovered] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [dropdownHovered, setDropdownHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentPosition = window.pageYOffset;
       setScrollPosition(currentPosition);
-      setIsScrolled(currentPosition > 80);
+      setIsScrolled(currentPosition > 80); // Navbar is fixed from the start
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -25,12 +25,10 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg navbar-dark ${
-        isScrolled ? 'navbar-shadow fixed-top navbar-after' : ''
-      }`}
-      style={{ backgroundColor: '#1e232e', transition: 'all 0.3s ease' }}
+      className='navbar navbar-expand-lg navbar-dark fixed-top'
+      style={{ backgroundColor: '#1e232e', transition: '.3s' }} // Remove transition
     >
-      <div className="container px-5">
+      <div className={`container px-5 ${isScrolled ? 'nav-pad':''}`}>
         <a className="navbar-brand" href="/">
           <img
             src={LogoImg}
@@ -89,12 +87,12 @@ function Navbar() {
                 onMouseLeave={() => setDropdownHovered(false)}
               >
                 <li>
-                  <Link className="dropdown-item" to="/It-Strategy-Consultancy">
+                  <Link className="dropdown-item menu-item" to="/It-Strategy-Consultancy">
                     IT Strategy Consultancy
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/Software-Service">
+                  <Link className="dropdown-item " to="/Software-Service">
                     Software Services
                   </Link>
                 </li>
@@ -114,9 +112,6 @@ function Navbar() {
               <Link className="nav-link" to="/Support">
                 Contact
               </Link>
-            </li>
-            <li className="nav-item">
-               
             </li>
           </ul>
         </div>

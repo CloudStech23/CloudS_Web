@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../Images/Team-cuate.png";
+ 
 import WhoImg from "../Images/WhoWeimg.png";
 import WhoImg1 from "../Images/WhoIMg1.png";
 import FadeOnScroll from "../Animated/motion";

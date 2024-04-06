@@ -25,10 +25,10 @@ function Home() {
               <FadeOnScroll>
 
               <div className="text-center my-5 ">
-                <h1 className="display-3 text-white mt-4" style={{ cursor: 'pointer' }}>
+                <h1 className="display-4 text-white mt-4" style={{ cursor: 'pointer' }}>
                   Welcome <span className="text-decoration-underline">Cloudstry</span>
                 </h1>
-                <h1 className="display-4 text-white mt-4" style={{ fontWeight: 500, cursor: 'pointer' }}>
+                <h1 className="display-4 text-white mt-4" style={{ fontWeight: 400, cursor: 'pointer' }}>
                   <Type />
                 </h1>
                 <p className="lead text-white-50 mb-4" style={{ cursor: 'pointer' }}>

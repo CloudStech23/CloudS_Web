@@ -32,3 +32,12 @@
     color: white;
     transition: .3s;
  }
+ .component-navbar{
+   margin-bottom: 5.5rem;
+ }
+ @media only screen and (max-width: 443px) {
+   .component-navbar{
+      margin-bottom: 4rem;
+    }
+    
+}
