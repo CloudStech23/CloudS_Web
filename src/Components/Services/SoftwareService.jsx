@@ -48,11 +48,13 @@ function SoftwareService() {
                 <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
                 <FadeOnScroll>
 
-                  <img
-                    class="img-fluid rounded-3 my-5"
-                    src="https://dummyimage.com/600x400/343a40/6c757d"
-                    alt="..."
-                  />
+                <iframe
+                    style={{ height: "25rem", width: "37.5rem" }}
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    frameborder="0"
+                    allowfullscreen
+                    className="img-fluid my-5 rounded"
+                  ></iframe>
                 </FadeOnScroll>
                 </div>
               </div>

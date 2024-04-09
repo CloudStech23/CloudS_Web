@@ -13,7 +13,13 @@ function Home() {
       {/* Header */}
       <header className="position-relative py-5 vh-100">
         {/* Video background */}
-        <video autoPlay muted loop id="video-bg" className="position-absolute top-0 start-0">
+        <video
+          autoPlay
+          muted
+          loop
+          id="video-bg"
+          className="position-absolute top-0 start-0"
+        >
           <source src={homevideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -23,23 +29,37 @@ function Home() {
           <div className="row gx-5 align-items-center justify-content-center">
             <div className="col-lg-6">
               <FadeOnScroll>
-
-              <div className="text-center my-5 ">
-                <h1 className="display-4 text-white mt-4" style={{ cursor: 'pointer' }}>
-                  Welcome <span className="text-decoration-underline">Cloudstry</span>
-                </h1>
-                <h1 className="display-4 text-white mt-4" style={{ fontWeight: 400, cursor: 'pointer' }}>
-                  <Type />
-                </h1>
-                <p className="lead text-white-50 mb-4" style={{ cursor: 'pointer' }}>
-                  Elevate your technology experience with Cloudstry Technologies, where expertise meets unparalleled commitment !!
-                </p>
-                <div className="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4">
-                  <Link className="btn btn-primary btn-lg px-4 me-sm-3" to='/Support'>
-                    Get Started
-                  </Link>
+                <div className="text-center my-5 ">
+                  <h1
+                    className="display-4 text-white mt-4"
+                    style={{ cursor: "pointer" }}
+                  >
+                    Welcome{" "}
+                    <span className="text-decoration-underline">Cloudstry</span>
+                  </h1>
+                  <h1
+                    className="display-4 text-white mt-4"
+                    style={{ fontWeight: 400, cursor: "pointer" }}
+                  >
+                    <Type />
+                  </h1>
+                  <p
+                    className="lead text-white-50 mb-4"
+                    style={{ cursor: "pointer" }}
+                  >
+                    Elevate your technology experience with Cloudstry
+                    Technologies, where expertise meets unparalleled commitment
+                    !!
+                  </p>
+                  <div className="d-grid gap-3 d-sm-flex justify-content-sm-center mt-4">
+                    <Link
+                      className="btn btn-primary btn-lg px-4 me-sm-3"
+                      to="/Support"
+                    >
+                      Get Started
+                    </Link>
+                  </div>
                 </div>
-              </div>
               </FadeOnScroll>
             </div>
           </div>
@@ -52,9 +72,16 @@ function Home() {
           <div className="row g-5">
             <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
               {/* Image */}
-              <div className="position-relative overflow-hidden h-100" style={{ minHeight: "400px" }}>
+              <div
+                className="position-relative overflow-hidden h-100"
+                style={{ minHeight: "400px" }}
+              >
                 <FadeOnScroll animation="right">
-                  <img className="img-fluid rounded-3 my-5" src={WhoImg} alt="..." />
+                  <img
+                    className="img-fluid rounded-3 my-5"
+                    src={WhoImg}
+                    alt="..."
+                  />
                 </FadeOnScroll>
               </div>
             </div>
@@ -119,76 +146,103 @@ function Home() {
           </div>
           <FadeOnScroll animation="up">
             <div className="row gx-5">
-            <div className="col-lg-4 mb-5  ">
-              <Link to='/ITStrategyConsultancy' className="text-decoration-none">
-                <div className="card h-100 shadow border-0 serve-card ">
-                  <img
-                    className="card-img-top"
-                    src="https://dummyimage.com/600x350/ced4da/6c757d"
-                    alt="..."
-                  />
-                  <div className="card-body p-4">
-                    <a
-                      className="text-decoration-none  "
-                      href="#!"
-                    >
-                      <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">It Strategy Consultancy</h5>
-                    </a>
-                    <p className="card-text mb-0 text-dark">
-                    At our consultancy firm, We specialize in providing IT strategy consulting services to organizations of all sizes. Our team of experienced consultants collaborates closely with your organization to develop a comprehensive IT strategy aligned with your business goals and objectives. Through our tailored approach, we ensure that your technology initiatives drive measurable results and sustainable growth.
-                    </p>
+              <div className="col-lg-4 mb-5  ">
+                  <div className="card h-100 shadow border-0 serve-card ">
+                    <iframe
+                    style={{ height: "13.8rem", width: "23.5rem" }}
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    frameborder="0"
+                    allowfullscreen
+                    className="img-fluid"
+                  ></iframe>
+                <Link
+                  to="/It-Strategy-Consultancy"
+                  className="text-decoration-none"
+                >
+                    <div className="card-body p-4">
+                      <a className="text-decoration-none  " href="#!">
+                        <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">
+                          It Strategy Consultancy
+                        </h5>
+                      </a>
+                      <p className="card-text mb-0 text-dark">
+                        At our consultancy firm, We specialize in providing IT
+                        strategy consulting services to organizations of all
+                        sizes. Our team of experienced consultants collaborates
+                        closely with your organization to develop a
+                        comprehensive IT strategy aligned with your business
+                        goals and objectives. Through our tailored approach, we
+                        ensure that your technology initiatives drive measurable
+                        results and sustainable growth.
+                      </p>
+                    </div>
+                </Link>
+                    <div className="card-footer p-4 pt-0 bg-transparent border-top-0"></div>
                   </div>
-                  <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
-                   </div>
-                </div>
-              </Link>
               </div>
               <div className="col-lg-4 mb-5  ">
-                <Link to='/ProductManagementQA' className="text-decoration-none">
                 <div className="card h-100 shadow border-0 serve-card">
-                  <img
-                    className="card-img-top"
-                    src="https://dummyimage.com/600x350/adb5bd/495057"
-                    alt="..."
-                  />
-                  <div className="card-body p-4">
-                    <a
-                      className="text-decoration-none  "
-                      href="#!"
-                    >
-                       <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">Product Mangement & QA</h5>
-                    </a>
-                    <p className="card-text mb-0 text-dark">
-                    Unlock seamless collaboration and elevate product excellence with our cutting-edge QA and Product Management Solutions. Our comprehensive services encompass rigorous testing protocols and strategic product roadmapping, empowering your team to deliver exceptional products on time, within budget, and with unmatched quality assurance.
-                    </p>
-                  </div>
+                  <iframe
+                    style={{ height: "13.8rem", width: "23.5rem" }}
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    frameborder="0"
+                    allowfullscreen
+                    className="img-fluid"
+                  ></iframe>
+                  <Link
+                    to="/ProductManagement-QA"
+                    className="text-decoration-none"
+                  >
+                    <div className="card-body p-4">
+                      <a className="text-decoration-none  " href="#!">
+                        <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">
+                          Product Mangement & QA
+                        </h5>
+                      </a>
+                      <p className="card-text mb-0 text-dark">
+                        Unlock seamless collaboration and elevate product
+                        excellence with our cutting-edge QA and Product
+                        Management Solutions. Our comprehensive services
+                        encompass rigorous testing protocols and strategic
+                        product roadmapping, empowering your team to deliver
+                        exceptional products on time, within budget, and with
+                        unmatched quality assurance.
+                      </p>
+                    </div>
+                  </Link>
                 </div>
-                </Link>
               </div>
               <div className="col-lg-4 mb-5  ">
-                <Link to='/SoftwareService' className="text-decoration-none">
-                <div className="card h-100 shadow border-0 serve-card">
-                  <img
-                    className="card-img-top "
-                    src="https://dummyimage.com/600x350/6c757d/343a40"
-                    alt="..."
-                  />
-                  <div className="card-body p-4">
-                    <a
-                      className="text-decoration-none  "
-                      href="#!"
-                    >
-                       <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">Software Service</h5>
-                    </a>
-                    <p className="card-text mb-0 text-dark">
-                    Our software services encompass a comprehensive suite of solutions tailored to meet the diverse needs of businesses in today's dynamic digital landscape. From custom software development to system integration and maintenance, we provide end-to-end services aimed at ensuring efficient operations and empowering businesses to thrive in an ever-evolving technological environment.
-                    </p>
-                  </div>
-                  <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
-                    <div className="d-flex align-items-end justify-content-between"></div>
-                  </div>
-                </div>
+                  <div className="card h-100 shadow border-0 serve-card">
+                  <iframe
+                    style={{ height: "13.8rem", width: "23.5rem" }}
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    frameborder="0"
+                    allowfullscreen
+                    className="img-fluid"
+                  ></iframe>
+                <Link to="/Software-Service" className="text-decoration-none">
+                    <div className="card-body p-4">
+                      <a className="text-decoration-none  " href="#!">
+                        <h5 className="card-title mb-3 fw-bold h4  text-center serve-text">
+                          Software Service
+                        </h5>
+                      </a>
+                      <p className="card-text mb-0 text-dark">
+                        Our software services encompass a comprehensive suite of
+                        solutions tailored to meet the diverse needs of
+                        businesses in today's dynamic digital landscape. From
+                        custom software development to system integration and
+                        maintenance, we provide end-to-end services aimed at
+                        ensuring efficient operations and empowering businesses
+                        to thrive in an ever-evolving technological environment.
+                      </p>
+                    </div>
                 </Link>
+                    <div className="card-footer p-4 pt-0 bg-transparent border-top-0">
+                       
+                    </div>
+                  </div>
               </div>
             </div>
           </FadeOnScroll>
@@ -196,7 +250,11 @@ function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-5" id="features" style={{ boxShadow: "inset #eaeaea 0px 15px 20px 0px" }}>
+      <section
+        className="py-5"
+        id="features"
+        style={{ boxShadow: "inset #eaeaea 0px 15px 20px 0px" }}
+      >
         <div className="container px-5 my-5">
           <div className="row gx-5">
             <div className="col-lg-4 mb-5 mb-lg-0">
@@ -207,13 +265,17 @@ function Home() {
             <div className="col-lg-8">
               <FadeOnScroll animation="up">
                 <div className="row gx-5 row-cols-1 row-cols-md-2">
-                <div className="col mb-5 h-100">
+                  <div className="col mb-5 h-100">
                     <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3">
                       <i className="bi bi-pc-display-horizontal"></i>
                     </div>
-                    <h2 className="h3 fw-normal">Enhancing Operational Efficiency</h2>
+                    <h2 className="h3 fw-normal">
+                      Enhancing Operational Efficiency
+                    </h2>
                     <p className="mb-0">
-                    Implementing streamlined processes and innovative technologies to optimize operations, reduce costs, and increase productivity
+                      Implementing streamlined processes and innovative
+                      technologies to optimize operations, reduce costs, and
+                      increase productivity
                     </p>
                   </div>
                   <div className="col mb-5 h-100">
@@ -222,7 +284,9 @@ function Home() {
                     </div>
                     <h2 className="h3 fw-normal">Customer-Centric Solutions</h2>
                     <p className="mb-0">
-                    Developing tailored IT solutions and services focused on meeting the evolving needs of customers, enhancing satisfaction, and fostering long-term relationships
+                      Developing tailored IT solutions and services focused on
+                      meeting the evolving needs of customers, enhancing
+                      satisfaction, and fostering long-term relationships
                     </p>
                   </div>
                   <div className="col mb-5 mb-md-0 h-100">
@@ -231,14 +295,19 @@ function Home() {
                     </div>
                     <h2 className="h3 fw-normal">Market Diversification</h2>
                     <p className="mb-0">
-                    Expanding into new markets and industries by diversifying product and service offerings, leveraging existing expertise and capabilities to address emerging market needs
+                      Expanding into new markets and industries by diversifying
+                      product and service offerings, leveraging existing
+                      expertise and capabilities to address emerging market
+                      needs
                     </p>
                   </div>
                   <div className="col h-100">
                     <div className="feature bg-primary bg-gradient text-white rounded-3 mb-3"></div>
                     <h2 className="h3 fw-normal">Continuous Innovation</h2>
                     <p className="mb-0">
-                    Cultivating a culture of creativity and continuous improvement to stay at the forefront of technological advancements
+                      Cultivating a culture of creativity and continuous
+                      improvement to stay at the forefront of technological
+                      advancements
                     </p>
                   </div>
                 </div>
@@ -254,7 +323,11 @@ function Home() {
           <div className="row gx-5 align-items-center">
             <div className="col-lg-6">
               <FadeOnScroll animation="right">
-                <img className="img-fluid rounded mb-5 mb-lg-0" src={contactImg} alt="..." />
+                <img
+                  className="img-fluid rounded mb-5 mb-lg-0"
+                  src={contactImg}
+                  alt="..."
+                />
               </FadeOnScroll>
             </div>
             <div className="col-lg-6">
