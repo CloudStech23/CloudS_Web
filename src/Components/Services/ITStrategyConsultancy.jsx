@@ -31,6 +31,7 @@ function ITStrategyConsultancy() {
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid my-5 rounded"
+                    title='Itstrategy&consultancy'
                   ></iframe>
                             </FadeOnScroll>
                             </div>

@@ -54,6 +54,7 @@ function SoftwareService() {
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid my-5 rounded"
+                    title="softwareservice"
                   ></iframe>
                 </FadeOnScroll>
                 </div>

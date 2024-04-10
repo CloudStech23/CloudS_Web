@@ -1,8 +1,9 @@
 import React from "react";
-import WhoImg from "../Images/WhoWeimg.png";
+// import WhoImg from "../Images/bgGIf.gif";
+import WhoImg1 from "../Images/WhoIMg1.png";
 import Type from "../Animated/Type";
 import FadeOnScroll from "../Animated/motion";
-import contactImg from "../Images/contactus.png";
+ 
 import { Link } from "react-router-dom";
 import "../Home/Home.css";
 import homevideo from "../video/homepagevid.mp4";
@@ -79,7 +80,7 @@ function Home() {
                 <FadeOnScroll animation="right">
                   <img
                     className="img-fluid rounded-3 my-5"
-                    src={WhoImg}
+                    src={WhoImg1}
                     alt="..."
                   />
                 </FadeOnScroll>
@@ -154,6 +155,7 @@ function Home() {
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid"
+                    title="Itstrategy&consultancy"
                   ></iframe>
                 <Link
                   to="/It-Strategy-Consultancy"
@@ -188,6 +190,7 @@ function Home() {
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid"
+                    title="Productmanagemtn&QA"
                   ></iframe>
                   <Link
                     to="/ProductManagement-QA"
@@ -220,6 +223,7 @@ function Home() {
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid"
+                    title="SoftwareService"
                   ></iframe>
                 <Link to="/Software-Service" className="text-decoration-none">
                     <div className="card-body p-4">
@@ -323,11 +327,12 @@ function Home() {
           <div className="row gx-5 align-items-center">
             <div className="col-lg-6">
               <FadeOnScroll animation="right">
-                <img
+                {/* <img
                   className="img-fluid rounded mb-5 mb-lg-0"
                   src={contactImg}
                   alt="..."
-                />
+                /> */}
+                <iframe className="img-fluid rounded" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14653.805620593368!2d76.0430372!3d23.3356551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3963670062b66555%3A0xfa5c9876e7c27b41!2sCloudstry%20Technology%20Private%20Limited!5e0!3m2!1sen!2sin!4v1712743996577!5m2!1sen!2sin"   style={{"border":0 , height:'25rem',width:'40rem'}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="map"></iframe>
               </FadeOnScroll>
             </div>
             <div className="col-lg-6">

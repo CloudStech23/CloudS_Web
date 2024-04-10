@@ -1,7 +1,6 @@
 import React from "react";
  
 import WhoImg from "../Images/WhoWeimg.png";
-import WhoImg1 from "../Images/WhoIMg1.png";
 import FadeOnScroll from "../Animated/motion";
 
 function About() {
@@ -34,12 +33,14 @@ function About() {
           <div class="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
             <div class="col-12 col-lg-6 col-xl-5">
               <FadeOnScroll animation="right">
-                <img
-                  class="img-fluid rounded"
-                  loading="lazy"
-                  src={WhoImg1}
-                  alt="About 1"
-                />
+              <iframe
+                    style={{ height: "25rem", width: "37.5rem" }}
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    frameborder="0"
+                    allowfullscreen
+                    className="img-fluid my-5 rounded"
+                    title="about us"
+                  ></iframe>
               </FadeOnScroll>
             </div>
             <div class="col-12 col-lg-6 col-xl-7">

@@ -38,6 +38,14 @@
     font-weight: 400;
     
 }
+.right-side-design{
+    height: 32.6rem;
+    border: 2px solid #1e232e;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 10px;
+    
+}
    
    
   

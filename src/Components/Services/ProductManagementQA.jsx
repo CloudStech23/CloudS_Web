@@ -35,6 +35,7 @@ function ProductManagementQA() {
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid my-5 rounded"
+                    title="productmanagement&QA"
                   ></iframe>
                     </FadeOnScroll>
                 </div>
