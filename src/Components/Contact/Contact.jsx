@@ -269,7 +269,7 @@ function Contact() {
                         class="link-secondary text-decoration-none"
                         href="mailto:hr@cloudstrytech.com"
                       >
-                        hr@cloudstrytech.com
+                        hr@cloudstrytech.co
                       </a>
                     </p>
                   </div>
