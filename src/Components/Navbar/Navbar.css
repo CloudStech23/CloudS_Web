@@ -2,11 +2,11 @@
    .logoimg{
     height: 2.7rem !important;
    }
-   .nav-pad{
+   /* .nav-pad{
       padding-left: 10px !important;
       padding-right: 10px !important;
       transition: .4s;
-    }
+    } */
 }
 .navbar-nav .nav-link {
    font-size: 19px; /* Adjust font size as needed */
@@ -32,11 +32,11 @@
    padding: 0.5rem 0; /* Adjust padding as needed */
  }
   
- .nav-pad{
+ /* .nav-pad{
    padding-left: 4px !important;
    padding-right: 4px !important;
    transition: .4s;
  }
  .container{
    transition: .4s;
- }
+ } */

@@ -1,34 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import LogoImg from '../Images/cloudslogo.png';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
+// import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 import { Link } from 'react-router-dom';
 import '../Navbar/Navbar.css';
 
 function Navbar() {
-  const [scrollPosition, setScrollPosition] = useState(0);
+  // const [scrollPosition, setScrollPosition] = useState(0);
   const [dropdownHovered, setDropdownHovered] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentPosition = window.pageYOffset;
-      setScrollPosition(currentPosition);
-      setIsScrolled(currentPosition > 80); // Navbar is fixed from the start
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const currentPosition = window.pageYOffset;
+  //     setScrollPosition(currentPosition);
+  //     setIsScrolled(currentPosition > 80); // Navbar is fixed from the start
+  //   };
 
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, []);
 
   return (
     <nav
-      className='navbar navbar-expand-lg navbar-dark fixed-top'
+      className='navbar navbar-expand-lg navbar-dark'
       style={{ backgroundColor: '#1e232e', transition: '.3s' }} // Remove transition
     >
-      <div className={`container px-5 ${isScrolled ? 'nav-pad':''}`}>
+      <div className='container px-5'>
         <Link className="navbar-brand" to="/">
           <img
             src={LogoImg}
@@ -70,7 +70,7 @@ function Navbar() {
             >
               <a
                 className="nav-link dropdown-toggle"
-                href="#"
+                href="/"
                 id="navbarDropdownBlog"
                 role="button"
                 data-bs-toggle="dropdown"

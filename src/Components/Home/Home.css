@@ -31,5 +31,16 @@
     color: black;
     font-weight: 400;
   }
+  .feature-btn{
+    border: 2px solid #1e232e !important;
+    background-color: transparent;
+    color: #1e232e;
+  }
+  .feature-btn:hover{
+    border: 2px solid #1e232e;
+    background-color: #1e232e;
+    color: white;
+    transition: .3s;
+  }
 
   
