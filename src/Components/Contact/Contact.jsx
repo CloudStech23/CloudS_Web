@@ -16,7 +16,7 @@ function Contact() {
     try {
       const response = await fetch(document.getElementById("sub-form").getAttribute("action"), {
         method: "POST",
-        body: formData,
+        body: formData, 
       });
 
       if (response.ok) {
@@ -56,6 +56,7 @@ function Contact() {
                         placeholder="Your Name"
                         required
                       />
+                       
                       <label htmlFor="name" className="inp-field">Your Name<span style={{ color: "red" }}>*</span></label>
                     </div>
                   </div>

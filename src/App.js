@@ -9,6 +9,7 @@ import ProductManagementQA from './Components/Services/ProductManagementQA';
 import SoftwareService from './Components/Services/SoftwareService'
 import Contact from './Components/Contact/Contact';
 import Career from './Components/Career/Career';
+import ScrollToTop from './Components/ScrootoTop'
  
  
  
@@ -20,6 +21,7 @@ function App() {
 
     <div className="App">
       <div className='component-navbar' >
+        <ScrollToTop/>
       <Navbar/>
       </div>
 

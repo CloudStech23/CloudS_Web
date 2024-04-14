@@ -35,7 +35,7 @@ function About() {
               <FadeOnScroll animation="right">
               <iframe
                     style={{ height: "25rem", width: "37.5rem" }}
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    src="https://www.youtube.com/embed/zXsoiavtMwo"
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid my-5 rounded"
@@ -124,66 +124,7 @@ function About() {
         </div>
       </section>
 
-      <section class="py-5 bg-light">
-        <FadeOnScroll animation="up">
-          <div class="container px-5 my-5">
-            <div class="text-center">
-              <div className="d-inline-block rounded-pill bg-secondary text-white py-1 px-3 my-auto mb-4">
-                OUR TEAM
-              </div>
-              <p class="lead fw-normal text-muted mb-5">
-                Team , Dedicated to Growth and your success
-              </p>
-            </div>
-            <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
-              <div class="col  mb-xl-0">
-                <div class="text-center">
-                  <img
-                    class="img-fluid rounded-circle mb-4 px-4"
-                    src="https://dummyimage.com/150x150/ced4da/6c757d"
-                    alt="..."
-                  />
-                  <h5 class="fw-bolder">Person 1</h5>
-                  <div class="fst-italic text-muted">Founder &amp; CEO</div>
-                </div>
-              </div>
-              <div class="col mb-xl-0">
-                <div class="text-center">
-                  <img
-                    class="img-fluid rounded-circle mb-4 px-4"
-                    src="https://dummyimage.com/150x150/ced4da/6c757d"
-                    alt="..."
-                  />
-                  <h5 class="fw-bolder">Person 2</h5>
-                  <div class="fst-italic text-muted">CFO</div>
-                </div>
-              </div>
-              <div class="col mb-sm-0">
-                <div class="text-center">
-                  <img
-                    class="img-fluid rounded-circle mb-4 px-4"
-                    src="https://dummyimage.com/150x150/ced4da/6c757d"
-                    alt="..."
-                  />
-                  <h5 class="fw-bolder">Person 3</h5>
-                  <div class="fst-italic text-muted">Operations Manager</div>
-                </div>
-              </div>
-              <div class="col ">
-                <div class="text-center">
-                  <img
-                    class="img-fluid rounded-circle mb-4 px-4"
-                    src="https://dummyimage.com/150x150/ced4da/6c757d"
-                    alt="..."
-                  />
-                  <h5 class="fw-bolder">Person 4</h5>
-                  <div class="fst-italic text-muted">CTO</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </FadeOnScroll>
-      </section>
+       
 
       <section class="py-5 position-relative bg-light">
         <div class="container px-5 my-5">

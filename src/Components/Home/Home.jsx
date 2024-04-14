@@ -36,7 +36,18 @@ function Home() {
                     style={{ cursor: "pointer" }}
                   >
                     Welcome{" "}
-                    <span className="text-decoration-underline">Cloudstry</span>
+                    <span className="">
+                      Cloudstry{" "}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        
+                        fill="currentColor"
+                        class="bi bi-cloudy"
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M13.405 8.527a5.001 5.001 0 0 0-9.499-1.004A3.5 3.5 0 1 0 3.5 14.5H13a3 3 0 0 0 .405-5.973M8.5 5.5a4 4 0 0 1 3.976 3.555.5.5 0 0 0 .5.445H13a2 2 0 0 1-.001 4H3.5a2.5 2.5 0 1 1 .605-4.926.5.5 0 0 0 .596-.329A4 4 0 0 1 8.5 5.5" />
+                      </svg>
+                    </span>
                   </h1>
                   <h1
                     className="display-4 text-white mt-4"
@@ -335,7 +346,7 @@ function Home() {
                 <div className="col-lg-10 col-xl-8 mx-auto">
                   <div className="p-5 bg-white shadow  rounded">
                     <Carousel
-                      interval={3000}
+                      interval={2000}
                       controls={false}
                       indicators={false}
                     >
@@ -376,7 +387,7 @@ function Home() {
                         <div className="media">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            style={{height:'4.5rem',width:'9rem'}}
+                            style={{ height: "4.5rem", width: "9rem" }}
                             fill="currentColor"
                             class="bi bi-tools"
                             viewBox="0 0 16 16"
