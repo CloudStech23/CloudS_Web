@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2b2741c1.css",
+    "main.js": "/static/js/main.40384e84.js",
+    "static/js/787.d4aba7ab.chunk.js": "/static/js/787.d4aba7ab.chunk.js",
+    "static/media/homepagevid.mp4": "/static/media/homepagevid.5d05fe007c9b7a93b4aa.mp4",
+    "static/media/cloudslogo.png": "/static/media/cloudslogo.ba4ff210bb16c80c5717.png",
+    "static/media/contactus.png": "/static/media/contactus.dc7833545bc872dd8fa3.png",
+    "static/media/WhoIMg1.png": "/static/media/WhoIMg1.aeb5bc65b1133c4049de.png",
+    "static/media/WhoWeimg.png": "/static/media/WhoWeimg.d1fcedef859db71d4b72.png",
+    "index.html": "/index.html",
+    "main.2b2741c1.css.map": "/static/css/main.2b2741c1.css.map",
+    "main.40384e84.js.map": "/static/js/main.40384e84.js.map",
+    "787.d4aba7ab.chunk.js.map": "/static/js/787.d4aba7ab.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2b2741c1.css",
+    "static/js/main.40384e84.js"
+  ]
+}

@@ -1,0 +1,42 @@
+@media only screen and (max-width: 442px) {
+   .logoimg{
+    height: 2.7rem !important;
+   }
+   /* .nav-pad{
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      transition: .4s;
+    } */
+}
+.navbar-nav .nav-link {
+   font-size: 19px; /* Adjust font size as needed */
+   font-weight: normal;
+   margin-right: 25px; /* Add space between nav items */
+   color: white !important;
+   font-weight: 500 !important;
+   
+ }
+.navbar-nav .nav-link:hover{
+   
+   color: rgb(159, 157, 157) !important;
+   
+ }
+ 
+ /* Adjustments for dropdown menu */
+ .dropdown-menu .dropdown-item {
+   font-size: 16px; /* Adjust font size for dropdown items if needed */
+
+ }
+ 
+ .dropdown-menu {
+   padding: 0.5rem 0; /* Adjust padding as needed */
+ }
+  
+ /* .nav-pad{
+   padding-left: 4px !important;
+   padding-right: 4px !important;
+   transition: .4s;
+ }
+ .container{
+   transition: .4s;
+ } */
