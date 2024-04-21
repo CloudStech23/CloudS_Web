@@ -34,7 +34,7 @@ function About() {
             <div class="col-12 col-lg-6 col-xl-5">
               <FadeOnScroll animation="right">
               <iframe
-                    style={{ height: "25rem", width: "37.5rem" }}
+                    style={{ height: "25rem", width: "37.6rem" }}
                     src="https://www.youtube.com/embed/zXsoiavtMwo"
                     frameborder="0"
                     allowfullscreen
