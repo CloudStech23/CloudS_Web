@@ -16,7 +16,7 @@ function About() {
               <div class="text-center">
                 <h1 class="fw-bolder mb-4 text-white">About Us</h1>
                 <p class=" fw-normal text-muted mb-2">
-                  <span className="fw-bold">Cloudstry Technologies</span>, A
+                  <span className="fw-bold">Cloudstry Technologies</span>,A
                   trusted partner for business growth, provides comprehensive
                   platform solutions, strategic consultancy, and tailored
                   strategies to propel businesses forward. Thrive in today's
@@ -34,7 +34,7 @@ function About() {
             <div class="col-12 col-lg-6 col-xl-5">
               <FadeOnScroll animation="right">
               <iframe
-                    style={{ height: "25rem", width: "37.5rem" }}
+                    style={{ height: "25rem", width: "37.6rem" }}
                     src="https://www.youtube.com/embed/zXsoiavtMwo"
                     frameborder="0"
                     allowfullscreen
