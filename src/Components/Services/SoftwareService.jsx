@@ -23,24 +23,13 @@ function SoftwareService() {
                       Software Service
                     </h2>
                     <p class=" fw-normal text-dark-50 mb-4">
-                      Our software services span the entire development
-                      lifecycle, covering all roles and technology stacks. We
-                      tailor solutions to meet unique organizational needs,
-                      providing expertise in analysis, design, development,
-                      testing, deployment, and maintenance.
+                    Our software services are at the forefront of innovation, integrating machine learning technologies across every stage of the development lifecycle. From initial analysis to ongoing maintenance, we infuse machine learning capabilities into our solutions, unlocking unprecedented insights and efficiencies for your organization.
                     </p>
                     <p class=" fw-normal text-dark-50 mb-4">
-                      With extensive experience, we cater to organizations of
-                      all sizes and industries, adept in Java, .NET, Python,
-                      Cloud, DevOps, Hadoop, R-system, and Ruby on Rails
-                      technologies. From startups to enterprises, we deliver
-                      scalable solutions aligned with business goals.
+                    With our extensive expertise in machine learning, alongside Java, .NET, Python, Cloud, DevOps, Hadoop, R-system, and Ruby on Rails technologies, we cater to organizations of all sizes and industries. Whether you're a startup navigating the complexities of data-driven decision-making or an enterprise seeking to optimize operations with predictive analytics, our tailored solutions are designed to meet your unique needs.
                     </p>
                     <p class=" fw-normal text-dark-50 mb-4">
-                      Collaborating with us streamlines your technology
-                      endeavors, optimizing time and resources. We guide you
-                      through efficient and cost-effective solutions, ensuring
-                      timely project completion within budget
+                    Experience the future of software development with our AI and  machine learning-powered solutions. Contact us today to embark on a journey of digital transformation and unlock the full potential of your organization's data."
                     </p>
                     </FadeOnScroll>
                   </div>

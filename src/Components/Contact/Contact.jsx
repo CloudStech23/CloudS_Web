@@ -22,8 +22,9 @@ function Contact() {
       if (response.ok) {
         console.log('Data saved to Google Sheets successfully!');
         // Optionally, you can reset the form here
+        // document.getElementById('submitButton').innerHTML='Wait a Moment..';
+        alert('submission is successfully completed')
         document.getElementById("sub-form").reset();
-        document.getElementById('submitButton').innerHTML='Send Message';
       } else {
         throw new Error("Network response was not ok");
       }
