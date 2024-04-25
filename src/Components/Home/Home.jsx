@@ -351,7 +351,7 @@ function Home() {
                       indicators={false}
                     >
                       <Carousel.Item>
-                        <div className="media">
+                        <div className="media feature-card">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             style={{ height: "4.5rem", width: "9rem" }}
@@ -364,8 +364,8 @@ function Home() {
                           </svg>
                           <FadeOnScroll animation="up">
                             <div
-                              className=" mb-4"
-                              style={{ fontSize: "2.5rem", fontWeight: 500 }}
+                              className=" mb-4 feature-title"
+                              style={{  fontWeight: 500 }}
                             >
                               Enhancing Operational Efficiency
                             </div>
@@ -384,7 +384,7 @@ function Home() {
                       </Carousel.Item>
 
                       <Carousel.Item>
-                        <div className="media">
+                        <div className="media feature-card" >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             style={{ height: "4.5rem", width: "9rem" }}
@@ -396,8 +396,8 @@ function Home() {
                           </svg>
                           <FadeOnScroll animation="up">
                             <div
-                              className=" mb-4"
-                              style={{ fontSize: "2.5rem", fontWeight: 500 }}
+                              className=" mb-4 feature-title"
+                              style={{ fontWeight: 500 }}
                             >
                               Customer-Centric Solutions
                             </div>
@@ -416,7 +416,7 @@ function Home() {
                       </Carousel.Item>
 
                       <Carousel.Item>
-                        <div className="media">
+                        <div className="media feature-card">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             style={{ height: "4.5rem", width: "9rem" }}
@@ -431,8 +431,8 @@ function Home() {
                           </svg>
                           <FadeOnScroll animation="up">
                             <div
-                              className=" mb-4"
-                              style={{ fontSize: "2.5rem", fontWeight: 500 }}
+                              className=" mb-4 feature-title"
+                              style={{ fontWeight: 500 }}
                             >
                               Market Diversification
                             </div>
@@ -450,7 +450,7 @@ function Home() {
                         </div>
                       </Carousel.Item>
                       <Carousel.Item>
-                        <div class="media">
+                        <div class="media feature-card"  >
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             style={{ height: "4.5rem", width: "9rem" }}

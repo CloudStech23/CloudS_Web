@@ -1,33 +1,15 @@
 import React, { useState } from 'react';
 import LogoImg from '../Images/cloudslogo.png';
-// import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Import Bootstrap JS
 import { Link } from 'react-router-dom';
 import '../Navbar/Navbar.css';
 
 function Navbar() {
-  // const [scrollPosition, setScrollPosition] = useState(0);
   const [dropdownHovered, setDropdownHovered] = useState(false);
-  // const [isScrolled, setIsScrolled] = useState(false);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const currentPosition = window.pageYOffset;
-  //     setScrollPosition(currentPosition);
-  //     setIsScrolled(currentPosition > 80); // Navbar is fixed from the start
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
+  const [dropdownHovered2, setDropdownHovered2] = useState(false);
+  const [submenuHovered, setSubmenuHovered] = useState(false);
 
   return (
-    <nav
-      className='navbar navbar-expand-lg navbar-dark'
-      style={{ backgroundColor: '#1e232e', transition: '.3s' }} // Remove transition
-    >
+    <nav className='navbar navbar-expand-lg navbar-dark' style={{ backgroundColor: '#1e232e', transition: '.3s' }}>
       <div className='container px-5'>
         <Link className="navbar-brand" to="/">
           <img
@@ -48,20 +30,46 @@ function Navbar() {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div
-          className="collapse navbar-collapse"
-          id="navbarSupportedContent"
-        >
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item underline-hover">
               <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
-            <li className="nav-item underline-hover">
-              <Link className="nav-link" to="/About-Us">
+            <li className={`nav-item dropdown ${dropdownHovered2 ? 'show' : ''}`}
+              onMouseEnter={() => setDropdownHovered2(true)}
+              onMouseLeave={() => setDropdownHovered2(false)}>
+              
+              <a
+                className="nav-link dropdown-toggle"
+                 
+                id="navbarDropdownSolutions"
+                role="button"
+                aria-expanded="false"
+              >
                 About
-              </Link>
+              </a>
+              <ul
+                className={`dropdown-menu ${dropdownHovered2 ? 'show' : ''}`}
+                aria-labelledby="navbarDropdownSolutions"
+                onMouseEnter={() => setDropdownHovered2(true)}
+                onMouseLeave={() => setDropdownHovered2(false)}
+              >
+                <li>
+                  <Link className="dropdown-item menu-item" to="/About-Us">
+                    Who Are We?
+                  </Link>
+                </li>
+                <li>
+                  <Link className="dropdown-item menu-item" to="">
+                    Proud Customers
+                  </Link>
+                </li>
+                </ul>
+
+
+               
             </li>
             <li
               className={`nav-item dropdown ${dropdownHovered ? 'show' : ''}`}
@@ -70,19 +78,16 @@ function Navbar() {
             >
               <a
                 className="nav-link dropdown-toggle"
-                href="/"
-                id="navbarDropdownBlog"
+                 
+                id="navbarDropdownSolutions"
                 role="button"
-                data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Solutions
               </a>
               <ul
-                className={`dropdown-menu dropdown-menu-end ${
-                  dropdownHovered ? 'show' : ''
-                }`}
-                aria-labelledby="navbarDropdownBlog"
+                className={`dropdown-menu ${dropdownHovered ? 'show' : ''}`}
+                aria-labelledby="navbarDropdownSolutions"
                 onMouseEnter={() => setDropdownHovered(true)}
                 onMouseLeave={() => setDropdownHovered(false)}
               >
@@ -91,10 +96,33 @@ function Navbar() {
                     IT Strategy Consultancy
                   </Link>
                 </li>
-                <li>
-                  <Link className="dropdown-item " to="/Software-Service">
+                <li
+                  className={`dropdown-submenu ${submenuHovered ? 'show' : ''}`}
+                  onMouseEnter={() => setSubmenuHovered(true)}
+                  onMouseLeave={() => setSubmenuHovered(false)}
+                >
+                  <a className="dropdown-item dropdown-toggle">
                     Software Services
-                  </Link>
+                  </a>
+                  <ul className={`dropdown-menu ${submenuHovered ? 'show' : ''}`}>
+                    {/* Add submenu items here */}
+                    <li>
+                      <Link className="dropdown-item" to="/">
+                        Machine Learning
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/">
+                        Cloud Service
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item" to="/">
+                        DevOps
+                      </Link>
+                    </li>
+                    {/* Add more submenu items if needed */}
+                  </ul>
                 </li>
                 <li>
                   <Link className="dropdown-item" to="/ProductManagement-QA">
