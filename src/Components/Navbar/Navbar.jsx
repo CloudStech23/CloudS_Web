@@ -107,17 +107,17 @@ function Navbar() {
                   <ul className={`dropdown-menu ${submenuHovered ? 'show' : ''}`}>
                     {/* Add submenu items here */}
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="/Machine-Learning">
                         Machine Learning
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="/Cloud-Services">
                         Cloud Service
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/">
+                      <Link className="dropdown-item" to="/DevOps">
                         DevOps
                       </Link>
                     </li>

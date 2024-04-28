@@ -9,7 +9,10 @@ import ProductManagementQA from './Components/Services/ProductManagementQA';
 import SoftwareService from './Components/Services/SoftwareService'
 import Contact from './Components/Contact/Contact';
 import Career from './Components/Career/Career';
-import ScrollToTop from './Components/ScrootoTop'
+import ScrollToTop from './Components/ScrootoTop';
+import MachineLearning from './Components/Services/Software-Services/MachineLearning';
+import CloudServices from './Components/Services/Software-Services/CloudServices';
+import DevOps from './Components/Services/Software-Services/DevOps';
  
  
  
@@ -33,6 +36,9 @@ function App() {
         <Route exact path='/ProductManagement-QA'  element={<ProductManagementQA/>}/>
         <Route exact path='/Support'  element={<Contact/>}/>
         <Route exact path='/Career'  element={<Career/>}/>
+        <Route exact path='/Machine-Learning'  element={<MachineLearning/>}/>
+        <Route exact path='/Cloud-Services'  element={<CloudServices/>}/>
+        <Route exact path='/DevOps'  element={<DevOps/>}/>
   
       </Routes>
        

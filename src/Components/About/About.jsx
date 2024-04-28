@@ -15,8 +15,8 @@ function About() {
             >
               <div class="text-center">
                 <h1 class="fw-bolder mb-4 text-white">About Us</h1>
-                <p class=" fw-normal text-muted mb-2">
-                  <span className="fw-bold">Cloudstry Technologies</span>,A
+                <p class=" fw-normal  mb-2" style={{color:'#c2c1c1'}}>
+                  <span className="fw-bold ">Cloudstry Technologies</span>,A
                   trusted partner for business growth, provides comprehensive
                   platform solutions, strategic consultancy, and tailored
                   strategies to propel businesses forward. Thrive in today's
