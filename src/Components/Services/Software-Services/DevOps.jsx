@@ -1,6 +1,7 @@
 import React from "react";
-import img1 from '../../Images/DevOps.png'
-import img2 from '../../Images/devops2.jpg'
+import img1 from "../../Images/DevOps.png";
+import img2 from "../../Images/devops2.jpg";
+import FadeOnScroll from "../../Animated/motion";
 
 function DevOps() {
   return (
@@ -36,31 +37,41 @@ function DevOps() {
           <div class="row">
             <div class="col-md-6 my-auto">
               <div class="animated fadeInLeft p-4 rounded">
-                <h1 class="elementor-heading-title elementor-size-default">
-                  DevOps (Development Oprartions)
-                </h1>
-                <p>
-                  DevOps combines development and operations teams to boost
-                  software delivery efficiency and reliability. Emphasizing
-                  collaboration and automation, it breaks down silos between
-                  these groups, enabling faster releases. By automating testing,
-                  deployment, and monitoring, DevOps streamlines workflows, cuts
-                  errors, and speeds up time-to-market while maintaining
-                  quality.
-                </p>
-                <p>
-                Discover streamlined software delivery with our comprehensive DevOps solutions. Our integrated approach merges development and operations, promoting collaboration and automation to accelerate release cycles and ensure top-notch quality. Experience faster time-to-market, reduced errors, and enhanced customer satisfaction with our tailored DevOps services.
-                </p>
+                <FadeOnScroll animation="right">
+                  <h1 class="elementor-heading-title elementor-size-default">
+                    DevOps (Development Oprartions)
+                  </h1>
+                  <p>
+                    DevOps combines development and operations teams to boost
+                    software delivery efficiency and reliability. Emphasizing
+                    collaboration and automation, it breaks down silos between
+                    these groups, enabling faster releases. By automating
+                    testing, deployment, and monitoring, DevOps streamlines
+                    workflows, cuts errors, and speeds up time-to-market while
+                    maintaining quality.
+                  </p>
+                  <p>
+                    Discover streamlined software delivery with our
+                    comprehensive DevOps solutions. Our integrated approach
+                    merges development and operations, promoting collaboration
+                    and automation to accelerate release cycles and ensure
+                    top-notch quality. Experience faster time-to-market, reduced
+                    errors, and enhanced customer satisfaction with our tailored
+                    DevOps services.
+                  </p>
+                </FadeOnScroll>
               </div>
             </div>
 
             <div class="col-md-6 my-auto  d-none d-lg-block">
-              <img
-                src={img1}
-                class="img-fluid rounded"
-                alt="Image"
-                style={{height:'30rem',width:'33rem'}}
-              />
+              <FadeOnScroll animation="left">
+                <img
+                  src={img1}
+                  class="img-fluid rounded"
+                  alt="Image"
+                  style={{ height: "30rem", width: "33rem" }}
+                />
+              </FadeOnScroll>
             </div>
           </div>
         </div>
@@ -69,11 +80,9 @@ function DevOps() {
         <div className="container">
           <div className="row">
             <div className="col-md-6 my-auto d-none d-lg-block">
-              <img
-                src={img2}
-                className="img-fluid rounded"
-                alt="Image"
-              />
+              <FadeOnScroll animation="right">
+                <img src={img2} className="img-fluid rounded" alt="Image" />
+              </FadeOnScroll>
             </div>
 
             <div className="col-md-6 my-auto">
@@ -81,14 +90,34 @@ function DevOps() {
                 className="animated fadeInRight p-4 rounded"
                 style={{ boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.2)" }}
               >
-                <p>
-                  <h1 className="h2">Empowering Industries Through DevOps</h1>
-                  DevOps has become a game-changer for market industries, revolutionizing the way businesses develop and deliver software. By fostering collaboration between development and operations teams, DevOps streamlines processes, leading to faster release cycles and reduced time-to-market. This agility enables companies to respond swiftly to market demands and stay ahead of competitors. Moreover, the automation of tasks such as testing and deployment minimizes errors, enhancing product quality and reliability. As a result, businesses can deliver innovative solutions more efficiently, leading to increased customer satisfaction and market share. Overall, DevOps not only improves operational efficiency but also drives business growth and competitiveness in today's fast-paced industries.
-                </p>
+                <FadeOnScroll animation="left">
+                  <p>
+                    <h1 className="h2">Empowering Industries Through DevOps</h1>
+                    DevOps has become a game-changer for market industries,
+                    revolutionizing the way businesses develop and deliver
+                    software. By fostering collaboration between development and
+                    operations teams, DevOps streamlines processes, leading to
+                    faster release cycles and reduced time-to-market. This
+                    agility enables companies to respond swiftly to market
+                    demands and stay ahead of competitors. Moreover, the
+                    automation of tasks such as testing and deployment minimizes
+                    errors, enhancing product quality and reliability. As a
+                    result, businesses can deliver innovative solutions more
+                    efficiently, leading to increased customer satisfaction and
+                    market share. Overall, DevOps not only improves operational
+                    efficiency but also drives business growth and
+                    competitiveness in today's fast-paced industries.
+                  </p>
 
-                <p>
-                Unlock market competitiveness with   <strong>Cloudstry Technologies</strong> DevOps solutions, enabling faster releases and superior product quality through seamless integration and cutting-edge automation. Boost efficiency, innovation, and customer satisfaction in your industry with our tailored approach.
-                </p>
+                  <p>
+                    Unlock market competitiveness with{" "}
+                    <strong>Cloudstry Technologies</strong> DevOps solutions,
+                    enabling faster releases and superior product quality
+                    through seamless integration and cutting-edge automation.
+                    Boost efficiency, innovation, and customer satisfaction in
+                    your industry with our tailored approach.
+                  </p>
+                </FadeOnScroll>
               </div>
             </div>
           </div>

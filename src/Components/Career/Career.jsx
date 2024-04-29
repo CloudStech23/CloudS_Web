@@ -1,8 +1,12 @@
 import React from "react";
 import "../Career/Career.css";
-import jobs from '../Career/CareerData';
+import {jobs} from '../Career/CareerData';
+ import { Link, useNavigate } from "react-router-dom";
+import FadeOnScroll from "../Animated/motion";
 
-function Career() {
+function Career( ) {
+  
+   
   return (
     <div>
       <div className="container mt-5 pt-4">
@@ -20,7 +24,7 @@ function Career() {
 
           <div className="col-md-4 mt-4 mt-sm-0 d-none d-md-block">
             <div className="text-center text-md-end">
-              <a href="#" className="text-primary">
+              <a href="#" className="text-dark" >
                 View more Jobs{" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -44,29 +48,32 @@ function Career() {
 
         <div className="row">
           {jobs.map((data) => (
-            <div key={data.id} className="col-lg-4 col-md-6 col-12 mt-4 pt-2">
-              <div className="card border-0 bg-light rounded shadow">
+            <div key={data.id} className="col-lg-4 col-md-6 col-12 mt-4 pt-2 mb-4">
+              <FadeOnScroll animation='up'>
+
+              <div className="card border-0 bg-light rounded shadow mb-2">
                 <div className="card-body p-4">
-                  <h5>{data.Title}</h5>
+                  <h5>{data.title}</h5>
                   <div className="mt-3">
                     <span className="text-muted d-block">
                       <i className="fa fa-building" aria-hidden="true"></i>
-                      <a href="#" target="_blank" className="text-muted">Technology</a>
+                      <a href="#" target="_blank" className="text-muted">{data.businessArea}</a>
                     </span>
                     <span className="text-muted d-block">
                       <i className="fa fa-home" aria-hidden="true"></i>
-                      <a href="#" target="_blank" className="text-muted">Cloudstry Technologies</a>
+                      <a href="#" target="_blank" className="text-muted">{data.company}</a>
                     </span>
                     <span className="text-muted d-block">
-                      <i className="fa fa-map-marker" aria-hidden="true"></i>{data.Location}
+                      <i className="fa fa-map-marker" aria-hidden="true"></i>{data.location}
                     </span>
                   </div>
 
                   <div className="mt-3">
-                    <a href="#" className="btn Careerbtn-primary">View Details</a>
+                    <Link to={`/Career/${data.id}`} className="btn Careerbtn-primary">View Details</Link>
                   </div>
                 </div>
               </div>
+              </FadeOnScroll>
             </div>
           ))}
         </div>

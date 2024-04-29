@@ -104,7 +104,7 @@ function Home() {
                   <div className="d-inline-block rounded-pill bg-secondary text-white py-1 px-3 my-auto">
                     Who are we?
                   </div>
-                  <h1 className="display-6 mb-10 mt-4">
+                  <h1 className="display-6 mb-2 mt-4">
                     <h1 className="fw-bold text-dark m-0">
                       Cloudstry Technologies
                       <span></span>

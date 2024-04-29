@@ -13,6 +13,7 @@ import ScrollToTop from './Components/ScrootoTop';
 import MachineLearning from './Components/Services/Software-Services/MachineLearning';
 import CloudServices from './Components/Services/Software-Services/CloudServices';
 import DevOps from './Components/Services/Software-Services/DevOps';
+import CareerDetails from './Components/Career/CareerDetails';
  
  
  
@@ -39,6 +40,7 @@ function App() {
         <Route exact path='/Machine-Learning'  element={<MachineLearning/>}/>
         <Route exact path='/Cloud-Services'  element={<CloudServices/>}/>
         <Route exact path='/DevOps'  element={<DevOps/>}/>
+        <Route exact path='/Career/:id'  element={<CareerDetails/>}/>
   
       </Routes>
        
