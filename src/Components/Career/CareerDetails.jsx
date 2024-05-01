@@ -12,34 +12,46 @@ function CareerDetails() {
         <div className="row">
           <div className="col-lg-6">
             <article>
-              <header className="mb-4">
-                <h1 className="fw-bolder mb-1">{data.title}</h1>
+              <header className="" style={{marginBottom:'2.2rem'}}>
+                <h1 className="display-6 mb-3" style={{fontWeight:'370',color:'#1e232e'}}>{data.title}</h1>
               </header>
               <section className="mb-5">
-                <h4 className="fw-noraml mb-1">Responsibilities</h4>
+                <h4 className="fw-bold mb-3">Responsibilities :</h4>
                 <p className="fs-5 mb-4">
                   <ul>
-                    <li>{data.resposibilities[0].R1}</li>{" "}
-                    <li>{data.resposibilities[0].R2}</li>
-                    <li>{data.resposibilities[1].R1}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R1}</li>{" "}
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R2}</li>
+                     
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R3}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R4}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R5}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R6}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R7}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R8}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R9}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R10}</li>
                   </ul>{" "}
                 </p>
 
-                <h4 className="fw-noraml mb-1">
-                  Experience and Skills required for the role:
+                <h4 className="fw-bold mb-3">
+                  Experience and Skills required for the role :
                 </h4>
                 <p className="fs-5 mb-4">
-                  For me, the most fascinating interface is Twitter. I have odd
-                  cosmic thoughts every day and I realized I could hold them to
-                  myself or share them with people who might be interested.
+                <ul>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E1}</li>{" "}
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E2}</li>
+                     
+                    <li className="fw-noraml" style={{fontSize:'17px'}} >{data.experience[0].E3}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E4}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E5}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E6}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E7}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E8}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E9}</li>
+                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E10}</li>
+                  </ul>{" "}
                 </p>
-                <p className="fs-5 mb-4">
-                  Venus has a runaway greenhouse effect. I kind of want to know
-                  what happened there because we're twirling knobs here on Earth
-                  without knowing the consequences of it. Mars once had running
-                  water. It's bone dry today. Something bad happened there as
-                  well.
-                </p>
+                 
               </section>
             </article>
           </div>
@@ -50,13 +62,13 @@ function CareerDetails() {
                   <div className="col-sm-6 mx-2">
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <a href="#!">Web Design</a>
+                        <a href="#" className="" style={{textDecoration:'none',color:'#1e232e'}}> <i className="fa fa-building" aria-hidden="true"></i> {data.jobarea}</a>
                       </li>
                       <li>
-                        <a href="#!">HTML</a>
+                        <a href="#" style={{textDecoration:'none',color:'#1e232e'}}> <i className="fa fa-briefcase" aria-hidden="true"></i> {data.jobtime}</a>
                       </li>
                       <li>
-                        <a href="#!">Freebies</a>
+                        <a href="#" style={{textDecoration:'none',color:'#1e232e'}}> <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}</a>
                       </li>
                     </ul>
                   </div>
@@ -80,6 +92,7 @@ function CareerDetails() {
                     id="fullname"
                     name="fullname"
                     required
+                    placeholder="John Doe"
                   />
                 </div>
                 <div className="col-12 col-md-6 mb-2">
@@ -108,6 +121,7 @@ function CareerDetails() {
                       id="email"
                       name="email"
                       required
+                      placeholder="JohnDoe@example.com"
                     />
                   </div>
                 </div>
@@ -124,6 +138,8 @@ function CareerDetails() {
                         fill="currentColor"
                         className="bi bi-telephone"
                         viewBox="0 0 16 16"
+                         
+
                       >
                         <path
                           fillRule="evenodd"
@@ -136,6 +152,7 @@ function CareerDetails() {
                       className="form-control"
                       id="phone"
                       name="phone"
+                      placeholder='XXXXX XXX00'
                     />
                   </div>
                 </div>
@@ -146,7 +163,7 @@ function CareerDetails() {
                     <select required name="job" class="form-select">
                       <option>Software Support Engineer</option>
                       <option>Software Engineer - Java</option>
-                      <option>Senior Software Engineer</option>
+                      <option default>{data.jobselect}</option>
                       <option>Senior Quality Analyst</option>
                       <option>Software Engineer - Nodejs/Angular</option>
                       <option>Dev Ops Engineer - Google Cloud</option>
@@ -177,6 +194,7 @@ function CareerDetails() {
                     name="message"
                     rows="3"
                     required
+                    placeholder="What motivates you?"
                   ></textarea>
                 </div>
                 <div className="col-12 mt-2">
