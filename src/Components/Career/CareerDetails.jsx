@@ -12,46 +12,29 @@ function CareerDetails() {
         <div className="row">
           <div className="col-lg-6">
             <article>
-              <header className="" style={{marginBottom:'2.2rem'}}>
-                <h1 className="display-6 mb-3" style={{fontWeight:'370',color:'#1e232e'}}>{data.title}</h1>
+              <header className="" style={{ marginBottom: "2.2rem" }}>
+                <h1 className="display-6 mb-3" style={{ fontWeight: '370', color: '#1e232e' }}>{data.title}</h1>
               </header>
               <section className="mb-5">
                 <h4 className="fw-bold mb-3">Responsibilities :</h4>
                 <p className="fs-5 mb-4">
                   <ul>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R1}</li>{" "}
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R2}</li>
-                     
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R3}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R4}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R5}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R6}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R7}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R8}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R9}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.resposibilities[0].R10}</li>
-                  </ul>{" "}
+                    {data.resposibilities[0] && Object.values(data.resposibilities[0]).map((responsibility, index) => (
+                      <li key={index} className="fw-noraml" style={{ fontSize: '17px' }}>{responsibility}</li>
+                    ))}
+                  </ul>
                 </p>
 
                 <h4 className="fw-bold mb-3">
                   Experience and Skills required for the role :
                 </h4>
                 <p className="fs-5 mb-4">
-                <ul>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E1}</li>{" "}
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E2}</li>
-                     
-                    <li className="fw-noraml" style={{fontSize:'17px'}} >{data.experience[0].E3}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E4}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E5}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E6}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E7}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E8}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E9}</li>
-                    <li className="fw-noraml" style={{fontSize:'17px'}}>{data.experience[0].E10}</li>
-                  </ul>{" "}
+                  <ul>
+                    {data.experience[0] && Object.values(data.experience[0]).map((exp, index) => (
+                      <li key={index} className="fw-noraml" style={{ fontSize: '17px' }}>{exp}</li>
+                    ))}
+                  </ul>
                 </p>
-                 
               </section>
             </article>
           </div>
@@ -62,13 +45,13 @@ function CareerDetails() {
                   <div className="col-sm-6 mx-2">
                     <ul className="list-unstyled mb-0">
                       <li>
-                        <a href="#" className="" style={{textDecoration:'none',color:'#1e232e'}}> <i className="fa fa-building" aria-hidden="true"></i> {data.jobarea}</a>
+                        <a href="#" className="" style={{ textDecoration: 'none', color: '#1e232e' }}> <i className="fa fa-building" aria-hidden="true"></i> {data.jobarea}</a>
                       </li>
                       <li>
-                        <a href="#" style={{textDecoration:'none',color:'#1e232e'}}> <i className="fa fa-briefcase" aria-hidden="true"></i> {data.jobtime}</a>
+                        <a href="#" style={{ textDecoration: 'none', color: '#1e232e' }}> <i className="fa fa-briefcase" aria-hidden="true"></i> {data.jobtime}</a>
                       </li>
                       <li>
-                        <a href="#" style={{textDecoration:'none',color:'#1e232e'}}> <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}</a>
+                        <a href="#" style={{ textDecoration: 'none', color: '#1e232e' }}> <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}</a>
                       </li>
                     </ul>
                   </div>
@@ -77,11 +60,11 @@ function CareerDetails() {
             </div>
 
             <form
-              action="#!"
+              action=""
               className="p-4 rounded mb-4"
               style={{ border: " ", boxShadow: "#c2c2c2 0px 1px 7px" }}
             >
-              <div className="row">
+               <div className="row">
                 <div className="col-12 mb-2">
                   <label htmlFor="fullname" className="form-label">
                     Full Name <span className="text-danger">*</span>
@@ -163,7 +146,7 @@ function CareerDetails() {
                     <select required name="job" class="form-select">
                       <option>Software Support Engineer</option>
                       <option>Software Engineer - Java</option>
-                      <option default>{data.jobselect}</option>
+                      <option value='default' selected>{data.jobselect}</option>
                       <option>Senior Quality Analyst</option>
                       <option>Software Engineer - Nodejs/Angular</option>
                       <option>Dev Ops Engineer - Google Cloud</option>

@@ -25,7 +25,7 @@ function Career( ) {
           <div className="col-md-4 mt-4 mt-sm-0 d-none d-md-block">
             <div className="text-center text-md-end">
               <a href="#" className="text-dark" >
-                View more Jobs{" "}
+                View Jobs on <i class="fa fa-linkedin-square " style={{fontSize:'1.5rem'}} aria-hidden="true"></i> {" "}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
