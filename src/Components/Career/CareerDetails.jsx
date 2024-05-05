@@ -144,9 +144,9 @@ function CareerDetails() {
                   <label class="d-block mb-4">
                     <span class="form-label d-block">Job Type </span>
                     <select required name="job" class="form-select">
+                      <option value='default' selected>{data.jobselect}</option>
                       <option>Software Support Engineer</option>
                       <option>Software Engineer - Java</option>
-                      <option value='default' selected>{data.jobselect}</option>
                       <option>Senior Quality Analyst</option>
                       <option>Software Engineer - Nodejs/Angular</option>
                       <option>Dev Ops Engineer - Google Cloud</option>

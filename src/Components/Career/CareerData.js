@@ -167,7 +167,7 @@ export const jobdetails = [
     location:'Chicago | USA',
     jobarea:'Technology',
     jobtime:'Full-Time',
-    jobselect:'Senior Software Engineer'
+    jobselect:'Software Support Engineer'
   },
   {
     id: 4,
@@ -238,7 +238,7 @@ export const jobdetails = [
     location:'Indore | India',
     jobarea:'Technology',
     jobtime:'Full-Time',
-    jobselect:'Dev Ops Engineer - Google Cloudr'
+    jobselect:'Dev Ops Engineer - Google Cloud'
   },
   {
     id: 6,
