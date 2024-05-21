@@ -24,6 +24,44 @@
 a {
 text-decoration:none;    
 }
+.car-col-left{
+    box-shadow:0px 0px 5px #c2c2c2 ;
+    margin-right: 1.7rem;
+    /* background-color: #1e232e; */
+}
+.car-col-right{
+    box-shadow: 0px 0px 5px #c2c2c2;
+    height: 52rem;
+
+}
+.job-title{
+ 
+    /* color: white !important; */
+    /* border-bottom: 1px solid #1e232e; */
+}
+.pad-4{
+    padding: 24px 24px 0px 24px;
+}
+@media only screen and (max-width:768px){
+    .car-col-right{
+        box-shadow: 0px 0px 5px #c2c2c2;
+        margin-top: 10px !important;
+    
+    }
+}
+.head-text{
+    font-size: 1.7rem;
+    font-style:inherit;
+    font-weight:normal;
+}
+.form{
+    padding-top: 10px !important;
+}
+.desc-para{
+    line-height: 20.5px;
+}
+
+    
  
 
  

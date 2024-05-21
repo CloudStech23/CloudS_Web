@@ -2,8 +2,22 @@ import React, { useState } from 'react';
 import LogoImg from '../Images/cloudslogo.png';
 import { Link } from 'react-router-dom';
 import '../Navbar/Navbar.css';
+import { auth } from '../Admin/Firebase';
 
 function Navbar() {
+  const token = localStorage.getItem('token');
+
+  // Check if user is authenticated
+  const isAuthenticated = auth.currentUser && token && auth.currentUser.accessToken === token;
+
+  // Function to handle navigation based on user's authentication status
+  const handleNavigation = () => {
+    if (isAuthenticated) {
+      return '/Dashboard'; // Redirect to dashboard if user is authenticated
+    } else {
+      return '/Signin'; // Redirect to sign-in page if user is not authenticated
+    }
+  };
   const [dropdownHovered, setDropdownHovered] = useState(false);
   const [dropdownHovered2, setDropdownHovered2] = useState(false);
   const [submenuHovered, setSubmenuHovered] = useState(false);
@@ -47,6 +61,7 @@ function Navbar() {
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
+                href='#'
               >
                 About
               </a>
@@ -61,11 +76,11 @@ function Navbar() {
                     Who Are We?
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link className="dropdown-item menu-item" to="">
                     Proud Customers
                   </Link>
-                </li>
+                </li> */}
                 </ul>
 
 
@@ -82,6 +97,7 @@ function Navbar() {
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
+                href='#'
               >
                 Solutions
               </a>
@@ -101,7 +117,7 @@ function Navbar() {
                   onMouseEnter={() => setSubmenuHovered(true)}
                   onMouseLeave={() => setSubmenuHovered(false)}
                 >
-                  <a className="dropdown-item dropdown-toggle">
+                  <a className="dropdown-item dropdown-toggle" href='#'>
                     Software Services
                   </a>
                   <ul className={`dropdown-menu ${submenuHovered ? 'show' : ''}`}>
@@ -141,6 +157,13 @@ function Navbar() {
                 Contact
               </Link>
             </li>
+             
+            <li className="nav-item">
+              <Link className="nav-link" to={handleNavigation()}>
+                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+              </Link>
+            </li>
+             
           </ul>
         </div>
       </div>

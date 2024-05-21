@@ -1,6 +1,7 @@
 import React from "react";
 import img1 from "../../Images/Cloudservices.png";
 import FadeOnScroll from "../../Animated/motion";
+import { Carousel } from "react-bootstrap";
 
 function CloudServices() {
   return (
@@ -41,119 +42,132 @@ function CloudServices() {
         </div>
       </header>
 
-      <section class="py-5 bg-light">
-        <div class="container px-5 my-5">
-          <div class="text-center mb-5"></div>
-          <div class="row gx-5 ">
-                <FadeOnScroll animation='right'>
-            <div class="col-xl-8">
+      <section class="py-5 bg-light text-center">
+      <section className="pb-5">
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-10 col-xl-8 mx-auto">
+                  <div className="p-5 bg-white shadow  rounded">
+                    <Carousel
+                      interval={2000}
+                      controls={false}
+                      indicators={false}
+                    >
+                      <Carousel.Item>
+                        <div className="media feature-card">
+                           
+                          <FadeOnScroll animation="up">
+                            <div
+                              className=" mb-4 feature-title"
+                              style={{  fontWeight: 500 }}
+                            >
+                              Why Cloud Services ?
+                            </div>
+                            <div className="media-body ml-3">
+                              <div className="blockquote border-0 p-0">
+                                <p className="font-italic lead">
+                                Cloud services offer scalability, flexibility, and cost-efficiency by eliminating the need for physical infrastructure. They facilitate seamless collaboration, enhance security, and provide robust disaster recovery capabilities. Leveraging cloud services accelerates innovation, improves time-to-market, and ensures business agility in a dynamic digital environment.
+                                </p>
+                              </div>
+                            </div>
+                          </FadeOnScroll>
+                        </div>
+                      </Carousel.Item>
 
-                
-              <div class="accordion mb-5 mt-4" id="accordionExample">
-                <h3 class="fw-bolder">Explore the realm of Cloud services.</h3>
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingOne">
-                    <button
-                      class="accordion-button"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                      aria-expanded="true"
-                      aria-controls="collapseOne"
-                    >
-                      Why Cloud Services ?
-                    </button>
-                  </h3>
-                  <div
-                    class="accordion-collapse collapse show"
-                    id="collapseOne"
-                    aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Cloud services offer scalability, flexibility, and
-                      cost-efficiency by eliminating the need for physical
-                      infrastructure. They facilitate seamless collaboration,
-                      enhance security, and provide robust disaster recovery
-                      capabilities. Leveraging cloud services accelerates
-                      innovation, improves time-to-market, and ensures business
-                      agility in a dynamic digital environment.
+                      <Carousel.Item>
+                        <div className="media feature-card" >
+                           
+                          <FadeOnScroll animation="up">
+                            <div
+                              className=" mb-4 feature-title"
+                              style={{ fontWeight: 500 }}
+                            >
+                              Cloud Collboration Market/Industries
+                            </div>
+                            <div className="media-body ml-3">
+                              <div className="blockquote border-0 p-0">
+                                <p className="font-italic lead">
+                                Collaborating cloud services with industry needs involves tailoring cloud solutions to address specific challenges and opportunities within different sectors. By understanding industry requirements, cloud providers can offer specialized services and tools designed to enhance efficiency, security, and compliance.
+                                </p>
+                              </div>
+                            </div>
+                          </FadeOnScroll>
+                        </div>
+                      </Carousel.Item>
+
+                      <Carousel.Item>
+                        <div className="media feature-card">
+                           
+                          <FadeOnScroll animation="up">
+                            <div
+                              className=" mb-4 feature-title"
+                              style={{ fontWeight: 400 }}
+                            >
+                              Aligning Cloud Services with Cloudstry
+                            </div>
+                            <div className="media-body ml-3">
+                              <div className="blockquote border-0 p-0">
+                                <p className="font lead">
+                                <strong >" Unveiling the Power of Our Cloud Services: Your Path to Success "</strong><br />
+                                Explore our tailored cloud solutions, designed to enhance your business with personalized strategies. Benefit from optimized operations, enhanced collaboration, and accelerated growth, tailored to your unique needs, to triumph in today's dynamic marketplace.
+
+
+
+
+
+
+
+                                
+
+                                </p>
+                              </div>
+                            </div>
+                          </FadeOnScroll>
+                        </div>
+                      </Carousel.Item>
+                       
+
+                      {/* <Carousel.Item>
+                    <div className="media">
+                      <div className="h1 mb-4">Enhancing Operational Efficiency</div>
+                      <div className="media-body ml-3">
+                        <div className="blockquote border-0 p-0">
+                          <p className="font-italic lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingTwo">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                      aria-expanded="false"
-                      aria-controls="collapseTwo"
-                    >
-                      Cloud Collboration Market/Industries
-                    </button>
-                  </h3>
-                  <div
-                    class="accordion-collapse collapse"
-                    id="collapseTwo"
-                    aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      Collaborating cloud services with industry needs involves
-                      tailoring cloud solutions to address specific challenges
-                      and opportunities within different sectors. By
-                      understanding industry requirements, cloud providers can
-                      offer specialized services and tools designed to enhance
-                      efficiency, security, and compliance.
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <div className="media">
+                      <div className="h1 mb-4">Enhancing Operational Efficiency</div>
+                      <div className="media-body ml-3">
+                        <div className="blockquote border-0 p-0">
+                          <p className="font-italic lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h3 class="accordion-header" id="headingThree">
-                    <button
-                      class="accordion-button collapsed"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                      aria-expanded="false"
-                      aria-controls="collapseThree"
-                    >
-                      Aligning Cloud Services with Cloudstry Technologies
-                    </button>
-                  </h3>
-                  <div
-                    class="accordion-collapse collapse"
-                    id="collapseThree"
-                    aria-labelledby="headingThree"
-                    data-bs-parent="#accordionExample"
-                  >
-                    <div class="accordion-body">
-                      <strong>
-                        Unveiling the Power of Our Cloud Services: Your Path to
-                        Success{" "}
-                      </strong>
-                      <br />
-                      Delve into our seamless integration of cutting-edge cloud
-                      solutions tailored to elevate your business. Experience
-                      personalized strategies meticulously crafted to address
-                      your unique needs and aspirations. With our expertise,
-                      harness the transformative potential of cloud technologies
-                      to optimize operations, foster collaboration, and
-                      effortlessly scale your endeavors. Witness the tangible
-                      benefits of enhanced efficiency, cost reduction, and
-                      accelerated growth as our cloud services pave the way for
-                      your triumph in today's dynamic marketplace.
+                  </Carousel.Item>
+                  <Carousel.Item>
+                    <div className="media">
+                      <div className="h1 mb-4" style={{fontSize:'2rem'}}>Enhancing Operational Efficiency</div>
+                      <div className="media-body ml-3">
+                        <div className="blockquote border-0 p-0">
+                          <p className="font-italic lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                          
+                        </div>
+                      </div>
                     </div>
+                  </Carousel.Item> */}
+                    </Carousel>
                   </div>
                 </div>
               </div>
             </div>
-            </FadeOnScroll>
-          </div>
-        </div>
-      </section>
+          </section>
+ 
+      </section>  
 
       <section class="py-5" id="features">
         <div class="container px-5 my-5">

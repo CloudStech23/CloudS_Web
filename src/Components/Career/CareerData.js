@@ -60,7 +60,7 @@ export const jobdetails = [
   {
     id: 1,
     title: "Software Support Engineer",
-    about: "",
+    about: "Provide comprehensive technical support, diagnose complex software issues, and deliver effective solutions to ensure smooth operations and client satisfaction.",
     
     resposibilities:[
       {
@@ -99,7 +99,7 @@ export const jobdetails = [
   {
     id: 2,
     title: "Software Engineer - Java",
-    about: "",
+    about: "Develop robust Java applications, collaborate with teams to design scalable solutions, and ensure code quality through testing and optimization practices.",
     
     resposibilities:[
       {
@@ -132,8 +132,8 @@ export const jobdetails = [
   },
   {
     id: 3,
-    title: "Software Support Engineer",
-    about: "",
+    title: "Senior Software Engineer",
+    about: "Lead development projects, mentor junior team members, and architect robust solutions, leveraging expertise in coding, design patterns, and problem-solving to drive innovation and exceed project goals.",
     
     resposibilities:[
       {
@@ -167,12 +167,12 @@ export const jobdetails = [
     location:'Chicago | USA',
     jobarea:'Technology',
     jobtime:'Full-Time',
-    jobselect:'Software Support Engineer'
+    jobselect:'Senior Software Engineer'
   },
   {
     id: 4,
     title: "Software Engineer - Nodejs / Angular",
-    about: "",
+    about: "Engineer dynamic web solutions using Node.js and Angular, focusing on performance, scalability, and user-centric design for optimal digital experiences.",
     
     resposibilities:[
       {
@@ -212,7 +212,7 @@ export const jobdetails = [
   {
     id: 5,
     title: "Dev Ops Engineer - Google Cloud",
-    about: "",
+    about: "Architect, automate, and manage cloud infrastructure on Google Cloud, implementing best practices for CI/CD, monitoring, and scalability to ensure reliable service delivery.",
     
     resposibilities:[
       {
@@ -243,7 +243,7 @@ export const jobdetails = [
   {
     id: 6,
     title: "Data Engineer",
-    about: "",
+    about: "Design, build, and optimize data pipelines, leveraging advanced technologies to enable efficient data processing, storage, and analysis, driving insights and innovation.",
     
     resposibilities:[
       {

@@ -1,0 +1,8 @@
+.signbtn{
+    color: white;
+    background-color: #1e232e;
+    border: 1px solid #1e232e;
+    width: 5rem;
+    justify-content: center;
+    align-items: center;
+}

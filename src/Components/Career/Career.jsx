@@ -13,11 +13,9 @@ function Career( ) {
         <div className="row align-items-end mb-4 pb-2">
           <div className="col-md-8">
             <div className="section-title text-center text-md-start">
-              <h4 className="title mb-4">Find the perfect jobs</h4>
+              <h4 className="title mb-4">Explore our latest job opportunities and join our team!</h4>
               <p className="text-muted mb-0 para-desc">
-                Start work with Leaping. Build responsive, mobile-first projects
-                on the web with the world's most popular front-end component
-                library.
+              Experience our proficiency!, Reach out to us to get started
               </p>
             </div>
           </div>
