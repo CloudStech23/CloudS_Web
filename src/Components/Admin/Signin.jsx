@@ -21,13 +21,17 @@ function SignIn() {
     setError(null); // Reset error state
 
     // Basic validation for email format
-    if (!email.includes('@')) {
-      setError('Invalid email format');
+    if (!email.includes("@")) {
+      setError("Invalid email format");
       return;
     }
 
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password);
+      const userCredential = await signInWithEmailAndPassword(
+        auth,
+        email.trim(),
+        password
+      );
       const user = userCredential.user;
       localStorage.setItem("token", user.accessToken);
       localStorage.setItem("user", JSON.stringify(user));
@@ -40,13 +44,19 @@ function SignIn() {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <div className="card" style={{ width: '400px', padding: '20px' }}>
+    <div
+      className="d-flex justify-content-center align-items-center"
+      style={{ height: "100vh" }}
+    >
+      <div className="card" style={{ width: "400px", padding: "20px" }}>
         <div className="card-body">
           <form onSubmit={handleSignIn}>
             <div className="form-group input-group mb-3">
-              <div className="input-group-prepend" style={{ marginRight: '5px' }}>
-                <span className="input-group-text" style={{height:'36px'}}>
+              <div
+                className="input-group-prepend"
+                style={{ marginRight: "5px" }}
+              >
+                <span className="input-group-text" style={{ height: "36px" }}>
                   <i className="fa fa-envelope"></i>
                 </span>
               </div>
@@ -56,24 +66,38 @@ function SignIn() {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                name="email" // Added name attribute
+                autoComplete="email" // Added autocomplete attribute
               />
             </div>
 
             <div className="form-group input-group mb-3">
-              <div className="input-group-prepend" style={{ marginRight: '5px' }}>
-                <span className="input-group-text" style={{height:'36px'}}>
+              <div
+                className="input-group-prepend"
+                style={{ marginRight: "5px" }}
+              >
+                <span className="input-group-text" style={{ height: "36px" }}>
                   <i className="fa fa-lock"></i>
                 </span>
               </div>
               <input
                 className="form-control"
                 placeholder="Password"
-                type={showPassword ? 'text' : 'password'}
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-              /><span className="input-group-text" onClick={togglePasswordVisibility} style={{height:'36px'}}>
-             <i className={showPassword ? 'fa fa-eye' : 'fa fa-eye-slash'}></i>
-            </span>
+                name="password" // Added name attribute
+                autoComplete="current-password" // Added autocomplete attribute
+              />
+              <span
+                className="input-group-text"
+                onClick={togglePasswordVisibility}
+                style={{ height: "36px" }}
+              >
+                <i
+                  className={showPassword ? "fa fa-eye" : "fa fa-eye-slash"}
+                ></i>
+              </span>
             </div>
 
             {error && (
@@ -82,8 +106,12 @@ function SignIn() {
               </div>
             )}
 
-            <div className="form-group d-flex d-flex justify-content-center">
-              <button type="submit" className="signbtn p-2 rounded "style={{ width: '100%' }}>
+            <div className="form-group d-flex justify-content-center">
+              <button
+                type="submit"
+                className="signbtn p-2 rounded"
+                style={{ width: "100%" }}
+              >
                 Login
               </button>
             </div>
