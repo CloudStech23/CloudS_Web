@@ -1,8 +1,11 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../Admin/Admin.css"; // Import your CSS file for styling
 import { signOut } from "firebase/auth";
 import { auth } from "./Firebase";
 import { useNavigate } from "react-router-dom";
+import ChangePassword from "./Changepassword";
+import logo from '../Images/cloudslogo.png'
+ 
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -17,14 +20,12 @@ function Dashboard() {
   };
 
   const [activeButton, setActiveButton] = useState("default"); // State to track active button
-  const [sidebarVisible, setSidebarVisible] = useState(true);
 
   const handleButtonClick = (buttonName) => {
     setActiveButton(buttonName); // Update active button state when clicked
   };
 
-
-  const [user , setUser] = useState(null);
+  const [user, setUser] = useState(null);
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
@@ -40,10 +41,6 @@ function Dashboard() {
     const date = new Date(parseInt(timestamp, 10)); // Convert to integer and create Date object
     return date.toLocaleString(); // Convert to human-readable string
   };
-
-  
-
-   
 
   return (
     <div className="d-flex" id="wrapper">
@@ -118,10 +115,10 @@ function Dashboard() {
               {activeButton === "default" && (
                 <div>
                   <img
-                    src="path/to/logo.png"
+                    src={logo}
                     alt="Logo"
-                    className="img-fluid mb-4"
-                    style={{ maxWidth: "150px" }}
+                    className="img-fluid mb-4 dashlogo"
+                     
                   />
                   <h1 className="display-4">Welcome to the Dashboard</h1>
                   <p className="lead">This is the default content.</p>
@@ -139,58 +136,82 @@ function Dashboard() {
                   </div>
                 </div>
               )}
-              {activeButton === "JA" && <div>Hello, I am an application.</div>}
+              {activeButton === "JA" && <div>I am application</div>}
               {activeButton === "AJ" && <div>Add a new job here.</div>}
-              {activeButton === "CP" && <div>Change your password here.</div>}
-              {activeButton === "P" && <div>
-                
-              <section class="vh-100" style={{backgroundColor: "#f4f5f7"}}>
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-6 mb-4 mb-lg-0">
-        <div class="card mb-3" style={{borderRadius: ".5rem"}}>
-          <div class="row g-0">
-            <div class="col-md-4 gradient-custom text-center text-white"
-              style={{borderTopLeftRadius:'.5rem',borderBottomLeftRadius:'.5rem'}}>
-              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp"
-                alt="Avatar" class="img-fluid my-5" style={{width: "80px;"}} />
-              <p className="text-dark">Welcome, User</p>
-              <p className="text-dark">Admin</p>
-              <i class="far fa-edit mb-5"></i>
-            </div>
-            <div class="col-md-8">
-              <div class="card-body p-4">
-                <h6>Information</h6>
-                <hr class="mt-0 mb-4"/>
-                <div class="row pt-1">
-                  <div class="col-6 mb-3">
-                    <h6>Email</h6>
-                    <p class="text-muted">{user.email}</p>
-                  </div>
-                  <div class="col-6 mb-3">
-                    <strong style={{whiteSpace:'normal'}}>Email Verified</strong>
-                    <p class="text-muted">{user.emailVerified ? "Yes":"No"}</p>
-                  </div>
+              {activeButton === "CP" && (
+                <div>
+                  <ChangePassword />
                 </div>
-                <h6>Other</h6>
-                <hr class="mt-0 mb-4"/>
-                <div class="row pt-1">
-                  <div class="col-12 mb-3">
-                    <h6>Last Login</h6>
-                    <p class="text-muted">{formatDate(user.lastLoginAt)}</p>
-                  </div>
-                  
+              )}
+              {activeButton === "P" && (
+                <div>
+                  <section
+                    class="vh-100"
+                    style={{ backgroundColor: "#f4f5f7" }}
+                  >
+                    <div class="container py-5 h-100">
+                      <div class="row d-flex justify-content-center align-items-center h-100">
+                        <div class="col col-lg-6 mb-4 mb-lg-0">
+                          <div
+                            class="card mb-3"
+                            style={{ borderRadius: ".5rem" }}
+                          >
+                            <div class="row g-0">
+                              <div
+                                class="col-md-4 gradient-custom text-center text-white"
+                                style={{
+                                  borderTopLeftRadius: ".5rem",
+                                  borderBottomLeftRadius: ".5rem",
+                                }}
+                              >
+                                <img
+                                  src="https://t3.ftcdn.net/jpg/05/53/79/60/360_F_553796090_XHrE6R9jwmBJUMo9HKl41hyHJ5gqt9oz.jpg"
+                                  alt="Avatar"
+                                  class="img-fluid"
+                                  style={{ width: "80px;", marginTop: "3rem" }}
+                                />
+                                <p className="text-dark">Welcome, User</p>
+                                <p className="text-dark">Admin</p>
+                                <i class="far fa-edit mb-5"></i>
+                              </div>
+                              <div class="col-md-8">
+                                <div class="card-body p-4">
+                                  <h6>Information</h6>
+                                  <hr class="mt-0 mb-4" />
+                                  <div class="row pt-1">
+                                    <div class="col-6 mb-3">
+                                      <h6>Email</h6>
+                                      <p class="text-muted">{user.email}</p>
+                                    </div>
+                                    <div class="col-6 mb-3">
+                                      <strong style={{ whiteSpace: "normal" }}>
+                                        Email Verified
+                                      </strong>
+                                      <p class="text-muted">
+                                        {user.emailVerified ? "Yes" : "No"}
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <h6>Other</h6>
+                                  <hr class="mt-0 mb-4" />
+                                  <div class="row pt-1">
+                                    <div class="col-12 mb-3">
+                                      <h6>Last Login</h6>
+                                      <p class="text-muted">
+                                        {formatDate(user.lastLoginAt)}
+                                      </p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
                 </div>
-                
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-                </div>}
+              )}
             </div>
           </div>
         </div>

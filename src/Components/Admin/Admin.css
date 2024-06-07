@@ -6,4 +6,11 @@
     justify-content: center;
     align-items: center;
 }
+.dashlogo{
+    max-width: 254px;
+    padding: 20px;
+    height: 92px;
+    border-radius: 5px;
+    background-color: rgb(21, 20, 20);
+}
  

@@ -1,11 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { jobdetails } from "../Career/CareerData";
+import { database } from "../Admin/Firebase";
 import "../Career/Career.css";
 
 function CareerDetails() {
   const { id } = useParams();
   const data = jobdetails.find((item) => item.id === parseInt(id));
+
+  const [formdata , setFormdata] = useState({
+    FullName:'',
+    Email:'',
+    Phone:'',
+    JobType:'',
+    Experience:'',
+    Message:''
+  })
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormdata(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    database.ref('Application').push(formdata);
+    setFormdata({
+      FullName:'',
+      Email:'',
+      Phone:'',
+      JobType:'',
+      Experience:'',
+      Message:''
+    });
+  };
+  
 
   return (
     <>
@@ -121,7 +153,7 @@ function CareerDetails() {
             <div class="col-12 col-md-4 p-2 car-col-right">
               <p className="head-text pad-4">Apply for this Job &#8594;</p>
 
-              <form action="" className="p-4 rounded mb-4 form">
+              <form action="" className="p-4 rounded mb-4 form" onSubmit={handleSubmit}  >
                 <div className="">
                   <div className="col-12 mb-3">
                     <label htmlFor="fullname" className="form-label">
@@ -130,10 +162,12 @@ function CareerDetails() {
                     <input
                       type="text"
                       className="form-control"
-                      id="fullname"
-                      name="fullname"
+                      id="FullName"
+                      name="FullName"
                       required
                       placeholder="John Doe"
+                      onChange={handleChange}
+                      value={formdata.FullName}
                     />
                   </div>
                   <div className="col-12 mb-3">
@@ -143,10 +177,12 @@ function CareerDetails() {
                     <input
                       type="email"
                       className="form-control"
-                      id="email"
-                      name="email"
+                      id="Email"
+                      name="Email"
                       required
                       placeholder="JohnDoe@example.com"
+                      onChange={handleChange}
+                      value={formdata.Email}
                     />
                   </div>
                   <div className="col-12 mb-3">
@@ -156,15 +192,17 @@ function CareerDetails() {
                     <input
                       type="tel"
                       className="form-control"
-                      id="phone"
-                      name="phone"
+                      id="Phone"
+                      name="Phone"
                       placeholder="XXXXX XXX00"
+                      onChange={handleChange}
+                      value={formdata.Phone}
                     />
                   </div>
                   <div className="col-12 mb-3">
                     <label class="d-block mb-4">
                       <span class="form-label d-block">Job Type </span>
-                      <select required name="job" class="form-select">
+                      <select required name="JobType" id="JobType" class="form-select" value={formdata.JobType} onChange={handleChange} >
                         <option value="default" selected>
                           {data.jobselect}
                         </option>
@@ -181,7 +219,7 @@ function CareerDetails() {
                     <label className="form-label d-block">
                       Years of experience
                     </label>
-                    <select required name="experience" className="form-select">
+                    <select required name="Experience" id="Experience" value={formdata.Experience} onChange={handleChange} className="form-select" >
                       <option>Less than a year</option>
                       <option>1 - 2 years</option>
                       <option>2 - 4 years</option>
@@ -196,11 +234,13 @@ function CareerDetails() {
                     </label>
                     <textarea
                       className="form-control"
-                      id="message"
-                      name="message"
+                      id="Message"
+                      name="Message"
                       rows="3"
                       required
                       placeholder="What motivates you?"
+                      onChange={handleChange}
+                      value={formdata.Message}
                     ></textarea>
                   </div>
                   <div className="col-12 mb-3">
@@ -208,7 +248,7 @@ function CareerDetails() {
                       Upload Your Resume
                     </label>
                     <input
-                      required
+                       
                       name="cv"
                       type="file"
                       className="form-control"
@@ -220,6 +260,7 @@ function CareerDetails() {
                         className="btn Careerbtn-primary btn-lg"
                         type="submit"
                         style={{ whiteSpace: "nowrap" }}
+                        
                       >
                         Submit Form
                       </button>
