@@ -2,20 +2,21 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { jobdetails } from "../Career/CareerData";
 import { database } from "../Admin/Firebase";
+import { ref, push } from "firebase/database"; // Import required methods
 import "../Career/Career.css";
 
 function CareerDetails() {
   const { id } = useParams();
   const data = jobdetails.find((item) => item.id === parseInt(id));
 
-  const [formdata , setFormdata] = useState({
-    FullName:'',
-    Email:'',
-    Phone:'',
-    JobType:'',
-    Experience:'',
-    Message:''
-  })
+  const [formdata, setFormdata] = useState({
+    FullName: '',
+    Email: '',
+    Phone: '',
+    JobType: data ? data.jobselect || '' : '',
+    Experience: '',
+    Message: ''
+  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,29 +28,39 @@ function CareerDetails() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    database.ref('Application').push(formdata);
-    setFormdata({
-      FullName:'',
-      Email:'',
-      Phone:'',
-      JobType:'',
-      Experience:'',
-      Message:''
-    });
+    const dbRef = ref(database, 'Application');
+    push(dbRef, formdata)
+      .then(() => {
+        setFormdata({
+          FullName: '',
+          Email: '',
+          Phone: '',
+          JobType: data ? data.jobselect || '' : '',
+          Experience: '',
+          Message: ''
+        });
+        alert('ok')
+      })
+      .catch((error) => {
+        console.error("Error adding document: ", error);
+      });
   };
-  
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
       <div>
-        <div class="container mt-4">
-          <div class="row p-3">
-            <div class="col-12 col-md-7  car-col-left">
-              <div className="">
+        <div className="container mt-4">
+          <div className="row p-3">
+            <div className="col-12 col-md-7 car-col-left">
+              <div>
                 <article>
                   <header className="job-title pad-4">
                     <h1
-                      className="display-6   "
+                      className="display-6"
                       style={{ fontWeight: "370", color: "#1e232e" }}
                     >
                       {data.title}
@@ -58,29 +69,9 @@ function CareerDetails() {
                       <p className="m-2">
                         <a
                           href="#"
-                          className=""
                           style={{ textDecoration: "none", color: "#1e232e" }}
                         >
-                          {" "}
-                          <i
-                            className="fa fa-building"
-                            aria-hidden="true"
-                          ></i>{" "}
-                          {data.jobarea}
-                        </a>
-                      </p>
-                      <p className="m-2">
-                        {" "}
-                        <a
-                          href="#"
-                          style={{ textDecoration: "none", color: "#1e232e" }}
-                        >
-                          {" "}
-                          <i
-                            className="fa fa-briefcase"
-                            aria-hidden="true"
-                          ></i>{" "}
-                          {data.jobtime}
+                          <i className="fa fa-building" aria-hidden="true"></i> {data.jobarea}
                         </a>
                       </p>
                       <p className="m-2">
@@ -88,22 +79,24 @@ function CareerDetails() {
                           href="#"
                           style={{ textDecoration: "none", color: "#1e232e" }}
                         >
-                          {" "}
-                          <i
-                            className="fa fa-map-marker"
-                            aria-hidden="true"
-                          ></i>{" "}
-                          {data.location}
+                          <i className="fa fa-briefcase" aria-hidden="true"></i> {data.jobtime}
+                        </a>
+                      </p>
+                      <p className="m-2">
+                        <a
+                          href="#"
+                          style={{ textDecoration: "none", color: "#1e232e" }}
+                        >
+                          <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}
                         </a>
                       </p>
                     </div>
                   </header>
-                  <section className=" p-4">
+                  <section className="p-4">
                     <p className="head-text mb-2">Description:</p>
-                    <p className="fs-5 mb-2 ">
+                    <p className="fs-5 mb-2">
                       <div>
-                        <p className="fw-noraml" style={{ fontSize: "17px" }}>
-                          
+                        <p className="fw-normal" style={{ fontSize: "17px" }}>
                           {data.about}
                         </p>
                       </div>
@@ -111,12 +104,12 @@ function CareerDetails() {
                     <p className="head-text mt-4">Responsibilities:</p>
                     <p className="fs-5 desc-para">
                       <div>
-                        {data.resposibilities[0] &&
-                          Object.values(data.resposibilities[0]).map(
+                        {data.responsibilities && data.responsibilities.length > 0 &&
+                          Object.values(data.responsibilities[0]).map(
                             (responsibility, index) => (
                               <p
                                 key={index}
-                                className="fw-noraml"
+                                className="fw-normal"
                                 style={{ fontSize: "17px" }}
                               >
                                 {responsibility}
@@ -126,17 +119,15 @@ function CareerDetails() {
                       </div>
                     </p>
 
-                    <p className=" head-text mt-4">
-                      Experience and Skills:
-                    </p>
+                    <p className="head-text mt-4">Experience and Skills:</p>
                     <p className="fs-5 mb-2 desc-para">
                       <div>
-                        {data.experience[0] &&
+                        {data.experience && data.experience.length > 0 &&
                           Object.values(data.experience[0]).map(
                             (exp, index) => (
                               <p
                                 key={index}
-                                className="fw-noraml"
+                                className="fw-normal"
                                 style={{ fontSize: "17px" }}
                               >
                                 {exp}
@@ -150,11 +141,15 @@ function CareerDetails() {
               </div>
             </div>
 
-            <div class="col-12 col-md-4 p-2 car-col-right">
+            <div className="col-12 col-md-4 p-2 car-col-right">
               <p className="head-text pad-4">Apply for this Job &#8594;</p>
 
-              <form action="" className="p-4 rounded mb-4 form" onSubmit={handleSubmit}  >
-                <div className="">
+              <form
+                action=""
+                className="p-4 rounded mb-4 form"
+                onSubmit={handleSubmit}
+              >
+                <div>
                   <div className="col-12 mb-3">
                     <label htmlFor="fullname" className="form-label">
                       Full Name <span className="text-danger">*</span>
@@ -200,11 +195,18 @@ function CareerDetails() {
                     />
                   </div>
                   <div className="col-12 mb-3">
-                    <label class="d-block mb-4">
-                      <span class="form-label d-block">Job Type </span>
-                      <select required name="JobType" id="JobType" class="form-select" value={formdata.JobType} onChange={handleChange} >
-                        <option value="default" selected>
-                          {data.jobselect}
+                    <label className="d-block mb-4">
+                      <span className="form-label d-block">Job Type </span>
+                      <select
+                        required
+                        name="JobType"
+                        id="JobType"
+                        className="form-select"
+                        value={formdata.JobType}
+                        onChange={handleChange}
+                      >
+                        <option value="" disabled>
+                          Select a job type
                         </option>
                         <option>Software Support Engineer</option>
                         <option>Software Engineer - Java</option>
@@ -219,7 +221,17 @@ function CareerDetails() {
                     <label className="form-label d-block">
                       Years of experience
                     </label>
-                    <select required name="Experience" id="Experience" value={formdata.Experience} onChange={handleChange} className="form-select" >
+                    <select
+                      required
+                      name="Experience"
+                      id="Experience"
+                      value={formdata.Experience}
+                      onChange={handleChange}
+                      className="form-select"
+                    >
+                      <option value="" disabled>
+                        Select experience level
+                      </option>
                       <option>Less than a year</option>
                       <option>1 - 2 years</option>
                       <option>2 - 4 years</option>
@@ -247,12 +259,7 @@ function CareerDetails() {
                     <label className="form-label d-block">
                       Upload Your Resume
                     </label>
-                    <input
-                       
-                      name="cv"
-                      type="file"
-                      className="form-control"
-                    />
+                    <input name="cv" type="file" className="form-control" />
                   </div>
                   <div className="col-12 mt-3">
                     <div className="d-grid">
@@ -260,7 +267,6 @@ function CareerDetails() {
                         className="btn Careerbtn-primary btn-lg"
                         type="submit"
                         style={{ whiteSpace: "nowrap" }}
-                        
                       >
                         Submit Form
                       </button>
