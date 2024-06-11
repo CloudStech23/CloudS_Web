@@ -5,6 +5,7 @@ import { auth } from "./Firebase";
 import { useNavigate } from "react-router-dom";
 import ChangePassword from "./Changepassword";
 import logo from '../Images/cloudslogo.png'
+import Applications from "./Applications";
  
 
 function Dashboard() {
@@ -136,7 +137,7 @@ function Dashboard() {
                   </div>
                 </div>
               )}
-              {activeButton === "JA" && <div>I am application</div>}
+              {activeButton === "JA" && <div><Applications/></div>}
               {activeButton === "AJ" && <div>Add a new job here.</div>}
               {activeButton === "CP" && (
                 <div>

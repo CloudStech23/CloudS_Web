@@ -60,7 +60,25 @@ text-decoration:none;
 .desc-para{
     line-height: 20.5px;
 }
-
+/* Add this CSS to your stylesheet or within a <style> tag in your HTML */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green */
+    color: white;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    
+  }
+  
+  .alert.show {
+    opacity: 1;
+  }
+  
     
  
 

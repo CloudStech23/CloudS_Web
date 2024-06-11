@@ -197,7 +197,7 @@ function Home() {
                 <div className="card h-100 shadow border-0 serve-card">
                   <iframe
                     style={{ height: "13.8rem", width: "23.5rem" }}
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    src="https://www.youtube.com/embed/w2oSELiJoUA"
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid"
@@ -230,7 +230,7 @@ function Home() {
                 <div className="card h-100 shadow border-0 serve-card">
                   <iframe
                     style={{ height: "13.8rem", width: "23.5rem" }}
-                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE"
+                    src="https://www.youtube.com/embed/wGd9el6cGTs"
                     frameborder="0"
                     allowfullscreen
                     className="img-fluid"
