@@ -116,7 +116,7 @@ export default function Footer() {
         className="bg-dark text-light text-center py-2 copyrighttext"
         style={{ height: "2.5rem" }}
       >
-        Copyright © 2021 All Rights Reserved |
+        Copyright © 2024 All Rights Reserved |
         <a
           href="https://cloudstrytech.com"
           className="fw-bold cursore-pointer text-light text-decoration-none hover"
