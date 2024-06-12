@@ -8,57 +8,59 @@ import "../Career/Career.css";
 function CareerDetails() {
   const { id } = useParams();
   const data = jobdetails.find((item) => item.id === parseInt(id));
+  
 
   const [formdata, setFormdata] = useState({
-    FullName: '',
-    Email: '',
-    Phone: '',
-    JobType: data ? data.jobselect || '' : '',
-    Experience: '',
-    Message: ''
+    FullName: "",
+    Email: "",
+    Phone: "",
+    JobType: data ? data.jobselect || "" : "",
+    Experience: "",
+    Message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormdata(prevState => ({
+    setFormdata((prevState) => ({
       ...prevState,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleSubmit = (e) => {
+     
     e.preventDefault();
-    const dbRef = ref(database, 'Application');
+    const dbRef = ref(database, "Application");
     push(dbRef, formdata)
       .then(() => {
         setFormdata({
-          FullName: '',
-          Email: '',
-          Phone: '',
-          JobType: data ? data.jobselect || '' : '',
-          Experience: '',
-          Message: ''
+          FullName: "",
+          Email: "",
+          Phone: "",
+          JobType: data ? data.jobselect || "" : "",
+          Experience: "",
+          Message: "",
         });
-        const alert = document.createElement('div');
-      alert.className = 'alert';
-      alert.innerText = 'Form submitted successfully!';
+        const alert = document.createElement("div");
+        alert.className = "alert";
+        alert.innerText = "Form submitted successfully!";
 
-      // Append alert to body
-      document.body.appendChild(alert);
+        // Append alert to body
+        document.body.appendChild(alert);
 
-      // Show alert
-      setTimeout(() => {
-        alert.classList.add('show');
-      }, 10); // small timeout to allow transition
-
-      // Hide alert after 2 seconds
-      setTimeout(() => {
-        alert.classList.remove('show');
-        // Remove alert after transition
+        // Show alert
         setTimeout(() => {
-          document.body.removeChild(alert);
-        }, 500); // match this time to CSS transition duration
-      }, 2000);
+          alert.classList.add("show");
+        }, 10); // small timeout to allow transition
+
+        // Hide alert after 2 seconds
+        setTimeout(() => {
+          alert.classList.remove("show");
+          // Remove alert after transition
+          setTimeout(() => {
+            document.body.removeChild(alert);
+          }, 500); // match this time to CSS transition duration
+        }, 2000);
       })
       .catch((error) => {
         console.error("Error adding document: ", error);
@@ -90,7 +92,8 @@ function CareerDetails() {
                           href="#"
                           style={{ textDecoration: "none", color: "#1e232e" }}
                         >
-                          <i className="fa fa-building" aria-hidden="true"></i> {data.jobarea}
+                          <i className="fa fa-building" aria-hidden="true"></i>{" "}
+                          {data.jobarea}
                         </a>
                       </p>
                       <p className="m-2">
@@ -98,7 +101,8 @@ function CareerDetails() {
                           href="#"
                           style={{ textDecoration: "none", color: "#1e232e" }}
                         >
-                          <i className="fa fa-briefcase" aria-hidden="true"></i> {data.jobtime}
+                          <i className="fa fa-briefcase" aria-hidden="true"></i>{" "}
+                          {data.jobtime}
                         </a>
                       </p>
                       <p className="m-2">
@@ -106,7 +110,11 @@ function CareerDetails() {
                           href="#"
                           style={{ textDecoration: "none", color: "#1e232e" }}
                         >
-                          <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}
+                          <i
+                            className="fa fa-map-marker"
+                            aria-hidden="true"
+                          ></i>{" "}
+                          {data.location}
                         </a>
                       </p>
                     </div>
@@ -123,7 +131,8 @@ function CareerDetails() {
                     <p className="head-text mt-4">Responsibilities:</p>
                     <p className="fs-5 desc-para">
                       <div>
-                        {data.responsibilities && data.responsibilities.length > 0 &&
+                        {data.responsibilities &&
+                          data.responsibilities.length > 0 &&
                           Object.values(data.responsibilities[0]).map(
                             (responsibility, index) => (
                               <p
@@ -141,7 +150,8 @@ function CareerDetails() {
                     <p className="head-text mt-4">Experience and Skills:</p>
                     <p className="fs-5 mb-2 desc-para">
                       <div>
-                        {data.experience && data.experience.length > 0 &&
+                        {data.experience &&
+                          data.experience.length > 0 &&
                           Object.values(data.experience[0]).map(
                             (exp, index) => (
                               <p
@@ -287,7 +297,7 @@ function CareerDetails() {
                         type="submit"
                         style={{ whiteSpace: "nowrap" }}
                       >
-                        Submit Form
+                         
                       </button>
                     </div>
                   </div>

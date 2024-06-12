@@ -1,9 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import "../Contact/Contact.css";
 import FadeOnScroll from "../Animated/motion";
 
 function Contact() {
-  // const [text , settext] = useState('Send Message')
+  const [text , settext] = useState('Send Message')
    
   
 
@@ -11,6 +11,8 @@ function Contact() {
     e.preventDefault();
     // settext('wait a second')
     var formData = new FormData(document.getElementById("sub-form"));
+    settext('Wait a Sec...')
+    
      
 
     try {
@@ -19,11 +21,28 @@ function Contact() {
         body: formData, 
       });
 
+     
       if (response.ok) {
-        console.log('Data saved to Google Sheets successfully!');
-        // Optionally, you can reset the form here
-        // document.getElementById('submitButton').innerHTML='Wait a Moment..';
-        alert('submission is successfully completed')
+        const alert = document.createElement('div');
+        alert.className = 'alert';
+        alert.innerText = 'Form submitted successfully!';
+        settext('Send Message')
+        document.body.appendChild(alert);
+
+        // Show alert
+        setTimeout(() => {
+          alert.classList.add("show");
+        }, 10); // small timeout to allow transition
+
+        // Hide alert after 2 seconds
+        setTimeout(() => {
+          alert.classList.remove("show");
+          // Remove alert after transition
+          setTimeout(() => {
+            document.body.removeChild(alert);
+          }, 500); // match this time to CSS transition duration
+        }, 2000);
+        
         document.getElementById("sub-form").reset();
       } else {
         throw new Error("Network response was not ok");
@@ -104,7 +123,7 @@ function Contact() {
                       className="my-btn  py-2 px-3 me-3"
                       id="submitButton"
                       type="submit"
-                      value='Send Message'
+                      value={text}
                       // onClick={ContactForm}
                     />
                   </div>
