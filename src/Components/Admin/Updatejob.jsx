@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, getDocs, deleteDoc, doc } from 'firebase/firestore';
 import { firestore } from '../Admin/Firebase'; // Adjust the path as per your project structure
-import './Career.css';
+import './Admin.css';
 import { Link } from 'react-router-dom';
 
-function Demo() {
+function Updatejob() {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -12,12 +12,12 @@ function Demo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        console.log("Fetching job listings"); // Debug log
+        console.log("Fetching job listings");
         const jobCollection = collection(firestore, "Job-card");
         const jobSnapshot = await getDocs(jobCollection);
         const jobList = jobSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         setJobs(jobList);
-        console.log("Job listings fetched:", jobList); // Debug log
+        console.log("Job listings fetched:", jobList);
       } catch (error) {
         console.error("Error fetching job listings: ", error);
         setError("Error fetching job listings: " + error.message);
@@ -28,6 +28,18 @@ function Demo() {
 
     fetchData();
   }, []);
+
+  const handleDeleteJob = async (id) => {
+    try {
+      console.log("Deleting job with ID:", id);
+      await deleteDoc(doc(firestore, 'Job-card', id));
+      console.log(`Job with ID ${id} successfully deleted.`);
+      setJobs(prevJobs => prevJobs.filter(job => job.id !== id));
+    } catch (error) {
+      console.error("Error deleting job:", error);
+      setError("Error deleting job: " + error.message);
+    }
+  };
 
   if (loading) {
     return <div>Loading...</div>;
@@ -95,7 +107,8 @@ function Demo() {
                   </div>
 
                   <div className="mt-3">
-                    <Link to={`/Career/${data.id}`} className="btn Careerbtn-primary">View Details</Link>
+                    <button onClick={() => handleDeleteJob(data.id)} className="btn Careerbtn-primary ms-2">Delete</button>
+                    {/* <Link to={`/Career/${data.id}`} className="btn Careerbtn-primary ms-2">View Details</Link> */}
                   </div>
                 </div>
               </div>
@@ -107,4 +120,4 @@ function Demo() {
   );
 }
 
-export default Demo;
+export default Updatejob;

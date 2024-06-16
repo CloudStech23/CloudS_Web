@@ -297,7 +297,7 @@ function CareerDetails() {
                         type="submit"
                         style={{ whiteSpace: "nowrap" }}
                       >
-                         
+                         Submit Application
                       </button>
                     </div>
                   </div>

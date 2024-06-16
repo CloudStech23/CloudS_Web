@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { database } from "./Firebase";
 import { ref, onValue, off, update, remove } from "firebase/database";
  
+ 
 
 function Applications() {
   const [applicants, setApplicants] = useState([]);

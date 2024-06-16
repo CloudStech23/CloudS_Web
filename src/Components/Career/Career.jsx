@@ -55,14 +55,14 @@ function Career( ) {
                   <div className="mt-3">
                     <span className="text-muted d-block">
                       <i className="fa fa-building" aria-hidden="true"></i>
-                      <a href="#" target="_blank" className="text-muted">{data.businessArea}</a>
+                      <span href="#" target="_blank" className="text-muted">{data.businessArea}</span>
                     </span>
                     <span className="text-muted d-block">
                       <i className="fa fa-home" aria-hidden="true"></i>
-                      <a href="#" target="_blank" className="text-muted">{data.company}</a>
+                      <span href="#" target="_blank" className="text-muted">{data.company}</span>
                     </span>
                     <span className="text-muted d-block">
-                      <i className="fa fa-map-marker" aria-hidden="true"></i>{data.location}
+                      <span className="fa fa-map-marker" aria-hidden="true"></span>{data.location}
                     </span>
                   </div>
 

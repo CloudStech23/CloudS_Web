@@ -62,7 +62,7 @@ export const jobdetails = [
     title: "Software Support Engineer",
     about: "Provide comprehensive technical support, diagnose complex software issues, and deliver effective solutions to ensure smooth operations and client satisfaction.",
     
-    resposibilities:[
+    responsibilities:[
       {
       R1:'Provide technical support to customers, assisting them with software-related issues and inquiries.',
       R2:'Troubleshoot and resolve software problems reported by users in a timely and efficient manner.',
@@ -101,7 +101,7 @@ export const jobdetails = [
     title: "Software Engineer - Java",
     about: "Develop robust Java applications, collaborate with teams to design scalable solutions, and ensure code quality through testing and optimization practices.",
     
-    resposibilities:[
+    responsibilities:[
       {
       R1:'Analyze project scope in relation to business scenarios and requirements to develop a QA test plan.',
       R2:'Create detailed test cases in collaboration with business analysts and QA engineers across one or more client accounts.',
@@ -135,7 +135,7 @@ export const jobdetails = [
     title: "Senior Software Engineer",
     about: "Lead development projects, mentor junior team members, and architect robust solutions, leveraging expertise in coding, design patterns, and problem-solving to drive innovation and exceed project goals.",
     
-    resposibilities:[
+    responsibilities:[
       {
         R1:'Design and develop scalable cloud software solutions using Java/J2EE and other relevant technologies',
         R2:'Collaborate with other developers, product managers, and stakeholders to understand business requirements and design software solutions that meet those requirements',
@@ -174,7 +174,7 @@ export const jobdetails = [
     title: "Software Engineer - Nodejs / Angular",
     about: "Engineer dynamic web solutions using Node.js and Angular, focusing on performance, scalability, and user-centric design for optimal digital experiences.",
     
-    resposibilities:[
+    responsibilities:[
       {
         R1: "Design and develop scalable web applications using Node.js and Angular frameworks.",
         R2: "Collaborate with product managers and stakeholders to understand project requirements and translate them into technical solutions.",
@@ -214,7 +214,7 @@ export const jobdetails = [
     title: "Dev Ops Engineer - Google Cloud",
     about: "Architect, automate, and manage cloud infrastructure on Google Cloud, implementing best practices for CI/CD, monitoring, and scalability to ensure reliable service delivery.",
     
-    resposibilities:[
+    responsibilities:[
       {
         R1: "Analyze project scope in relation to business scenarios and requirements to develop deployment and testing strategies.",
         R2: "Collaborate with business analysts and QA engineers to define and automate detailed testing procedures across multiple client accounts.",
@@ -245,7 +245,7 @@ export const jobdetails = [
     title: "Data Engineer",
     about: "Design, build, and optimize data pipelines, leveraging advanced technologies to enable efficient data processing, storage, and analysis, driving insights and innovation.",
     
-    resposibilities:[
+    responsibilities:[
       {
         R1: "Responsible for the evaluation, selection, and implementation of appropriate technologies tailored to specific solution requirements.",
         R2: "Experience in building and migrating Data Warehouses to the Cloud or enhancing existing Data Warehouses within the Cloud environment.",

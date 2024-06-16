@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import ChangePassword from "./Changepassword";
 import logo from '../Images/cloudslogo.png'
 import Applications from "./Applications";
+import Add_JOb from "./Add_JOb";
+import Updatejob from "./Updatejob";
  
 
 function Dashboard() {
@@ -69,6 +71,13 @@ function Dashboard() {
             onClick={() => handleButtonClick("AJ")}
           >
             Add Job
+          </a>
+          <a
+            className="list-group-item list-group-item-action list-group-item-light p-3"
+            style={{ cursor: "pointer" }}
+            onClick={() => handleButtonClick("UA")}
+          >
+            Update Advertisement
           </a>
           <a
             className="list-group-item list-group-item-action list-group-item-light p-3"
@@ -138,7 +147,8 @@ function Dashboard() {
                 </div>
               )}
               {activeButton === "JA" && <div><Applications/></div>}
-              {activeButton === "AJ" && <div>Add a new job here.</div>}
+              {activeButton === "AJ" && <div><Add_JOb/></div>}
+              {activeButton === "UA" && <div><Updatejob/></div>}
               {activeButton === "CP" && (
                 <div>
                   <ChangePassword />
