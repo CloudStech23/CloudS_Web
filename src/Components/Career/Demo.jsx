@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs } from 'firebase/firestore';
-import { firestore } from '../Admin/Firebase'; // Adjust the path as per your project structure
+import { getDatabase, ref, onValue } from 'firebase/database';
 import './Career.css';
 import { Link } from 'react-router-dom';
+import { Skeleton } from '@mui/material';
 
 function Demo() {
   const [jobs, setJobs] = useState([]);
@@ -10,28 +10,33 @@ function Demo() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        console.log("Fetching job listings"); // Debug log
-        const jobCollection = collection(firestore, "Job-card");
-        const jobSnapshot = await getDocs(jobCollection);
-        const jobList = jobSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setJobs(jobList);
-        console.log("Job listings fetched:", jobList); // Debug log
-      } catch (error) {
+    const fetchData = () => {
+      const db = getDatabase();
+      const jobRef = ref(db, "Career");
+
+      onValue(jobRef, (snapshot) => {
+        if (snapshot.exists()) {
+          const jobList = [];
+          snapshot.forEach((childSnapshot) => {
+            jobList.push({
+              id: childSnapshot.key,
+              ...childSnapshot.val()
+            });
+          });
+          setJobs(jobList);
+        } else {
+          console.log("No data available");
+        }
+        setLoading(false);
+      }, (error) => {
         console.error("Error fetching job listings: ", error);
         setError("Error fetching job listings: " + error.message);
-      } finally {
         setLoading(false);
-      }
+      });
     };
 
     fetchData();
   }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
 
   if (error) {
     return <div>{error}</div>;
@@ -75,32 +80,41 @@ function Demo() {
         </div>
 
         <div className="row">
-          {jobs.map((data) => (
-            <div key={data.id} className="col-lg-4 col-md-6 col-12 mt-4 pt-2 mb-4">
-              <div className="card border-0 bg-light rounded shadow mb-2">
-                <div className="card-body p-4">
-                  <h5>{data.title}</h5>
-                  <div className="mt-3">
-                    <span className="text-muted d-block">
-                      <i className="fa fa-building" aria-hidden="true"></i>
-                      <a href="#" target="_blank" className="text-muted"> {data.businessArea}</a>
-                    </span>
-                    <span className="text-muted d-block">
-                      <i className="fa fa-home" aria-hidden="true"></i>
-                      <a href="#" target="_blank" className="text-muted"> {data.company}</a>
-                    </span>
-                    <span className="text-muted d-block">
-                      <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}
-                    </span>
-                  </div>
+          {loading ? (
+            // Display 6 skeletons while loading
+            Array.from(new Array(3)).map((_, index) => (
+              <div key={index} className="col-lg-4 col-md-6 col-12 mt-4 pt-2 mb-4">
+                <Skeleton variant="rectangular" width="100%" height={200} />
+              </div>
+            ))
+          ) : (
+            jobs.map((data) => (
+              <div key={data.id} className="col-lg-4 col-md-6 col-12 mt-4 pt-2 mb-4">
+                <div className="card border-0 bg-light rounded shadow mb-2">
+                  <div className="card-body p-4">
+                    <h5>{data.title}</h5>
+                    <div className="mt-3">
+                      <span className="text-muted d-block">
+                        <i className="fa fa-building" aria-hidden="true"></i>
+                        <a href="#" target="_blank" className="text-muted"> {data.businessArea}</a>
+                      </span>
+                      <span className="text-muted d-block">
+                        <i className="fa fa-home" aria-hidden="true"></i>
+                        <a href="#" target="_blank" className="text-muted"> {data.company}</a>
+                      </span>
+                      <span className="text-muted d-block">
+                        <i className="fa fa-map-marker" aria-hidden="true"></i> {data.location}
+                      </span>
+                    </div>
 
-                  <div className="mt-3">
-                    <Link to={`/Career/${data.id}`} className="btn Careerbtn-primary">View Details</Link>
+                    <div className="mt-3">
+                      <Link to={`/demodetail/${data.id}`} className="btn Careerbtn-primary">View Details</Link>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </div>

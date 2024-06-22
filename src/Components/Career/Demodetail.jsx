@@ -1,45 +1,50 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { firestore } from "../Admin/Firebase"; // Adjust the import path as needed
-import { doc, getDoc } from "firebase/firestore";
+import { getDatabase, ref, onValue } from "firebase/database";
 import "../Career/Career.css";
 
 function Demodetail() {
   const { id } = useParams();
-  const [data, setData] = useState(null);
+  const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        console.log(`Fetching document with ID: ${id}`); // Debug log
-        const docRef = doc(firestore, "Job-card", id);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          console.log("Document data:", docSnap.data()); // Debug log
-          setData(docSnap.data());
+    const fetchData = () => {
+      const db = getDatabase();
+      const jobRef = ref(db, "Career");
+
+      onValue(jobRef, (snapshot) => {
+        if (snapshot.exists()) {
+          let jobFound = null;
+          snapshot.forEach((childSnapshot) => {
+            const jobData = {
+              id: childSnapshot.key,
+              ...childSnapshot.val()
+            };
+            if (jobData.id === id) {
+              jobFound = jobData;
+            }
+          });
+          if (jobFound) {
+            setJob(jobFound);
+          } else {
+            console.log("No matching job found");
+            setJob(null);
+          }
         } else {
-          console.error("No such document!");
-          setError("No such document found.");
+          console.log("No data available");
         }
-      } catch (error) {
-        console.error("Error fetching document: ", error);
-        setError("Error fetching document: " + error.message);
-      } finally {
         setLoading(false);
-      }
+      }, (error) => {
+        console.error("Error fetching job listings: ", error);
+        setError("Error fetching job listings: " + error.message);
+        setLoading(false);
+      });
     };
-  
-    if (id) {
-      fetchData();
-    } else {
-      console.error("Invalid document ID");
-      setError("Invalid document ID");
-      setLoading(false);
-    }
+
+    fetchData();
   }, [id]);
-  
 
   if (loading) {
     return <div>Loading...</div>;
@@ -49,7 +54,7 @@ function Demodetail() {
     return <div>{error}</div>;
   }
 
-  if (!data) {
+  if (!job) {
     return <div>No such document found.</div>;
   }
 
@@ -58,22 +63,22 @@ function Demodetail() {
       <article>
         <header className="job-title pad-4">
           <h1 className="display-6" style={{ fontWeight: "370", color: "#1e232e" }}>
-            {data.title}
+            {job.title}
           </h1>
           <div className="d-flex">
             <p className="m-2">
               <a href="#" style={{ textDecoration: "none", color: "#1e232e" }}>
-                <i className="fa fa-building" aria-hidden="true"></i> {data.jobArea}
+                <i className="fa fa-building" aria-hidden="true"></i> {job.jobArea}
               </a>
             </p>
             <p className="m-2">
               <a href="#" style={{ textDecoration: "none", color: "#1e232e" }}>
-                <i className="fa fa-briefcase" aria-hidden="true"></i> {data.jobTime}
+                <i className="fa fa-briefcase" aria-hidden="true"></i> {job.jobTime}
               </a>
             </p>
             <p className="m-2">
               <a href="#" style={{ textDecoration: "none", color: "#1e232e" }}>
-                <i className="fa fa-map-marker" aria-hidden="true"></i> {data.Location}
+                <i className="fa fa-map-marker" aria-hidden="true"></i> {job.location}
               </a>
             </p>
           </div>
@@ -82,13 +87,13 @@ function Demodetail() {
           <p className="head-text mb-2">Description:</p>
           <div>
             <p className="fw-normal" style={{ fontSize: "17px" }}>
-              {data.about}
+              {job.about}
             </p>
           </div>
           <p className="head-text mt-4">Responsibilities:</p>
           <div>
-            {data.responsibilities &&
-              data.responsibilities.map((responsibility, index) => (
+            {job.responsibilities &&
+              job.responsibilities.map((responsibility, index) => (
                 <p key={index} className="fw-normal" style={{ fontSize: "17px" }}>
                   {responsibility}
                 </p>
@@ -96,8 +101,8 @@ function Demodetail() {
           </div>
           <p className="head-text mt-4">Experience and Skills:</p>
           <div>
-            {data.experience &&
-              data.experience.map((exp, index) => (
+            {job.experience &&
+              job.experience.map((exp, index) => (
                 <p key={index} className="fw-normal" style={{ fontSize: "17px" }}>
                   {exp}
                 </p>

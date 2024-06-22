@@ -103,6 +103,10 @@ text-decoration:none;
   .alert.show {
     opacity: 1;
   }
+  .error{
+    color: red;
+    text-align: left;
+  }
   
     
  

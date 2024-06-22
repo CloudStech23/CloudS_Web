@@ -160,7 +160,7 @@ function Navbar() {
              
             <li className="nav-item">
               <Link className="nav-link" to={handleNavigation()}>
-                <i className="fa fa-user-circle-o" aria-hidden="true"></i>
+                <i className="fa fa-user-circle-o" title='Admin Dashboard' aria-hidden="true"></i>
               </Link>
             </li>
              

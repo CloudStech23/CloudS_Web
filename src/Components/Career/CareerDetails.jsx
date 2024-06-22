@@ -284,12 +284,12 @@ function CareerDetails() {
                       value={formdata.Message}
                     ></textarea>
                   </div>
-                  <div className="col-12 mb-3">
+                  {/* <div className="col-12 mb-3">
                     <label className="form-label d-block">
                       Upload Your Resume
                     </label>
                     <input name="cv" type="file" className="form-control" />
-                  </div>
+                  </div> */}
                   <div className="col-12 mt-3">
                     <div className="d-grid">
                       <button

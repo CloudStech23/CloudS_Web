@@ -37,11 +37,35 @@ function SignIn() {
       localStorage.setItem("user", JSON.stringify(user));
       // Redirect the user to the desired page after successful sign-in
       navigate("/dashboard");
-    } catch (error) {
+
+      const alert = document.createElement("div");
+      alert.className = "alert";
+      alert.innerText = "Admin Logged-in";
+
+      // Append alert to body
+      document.body.appendChild(alert);
+
+      // Show alert
+      setTimeout(() => {
+        alert.classList.add("show");
+      }, 10); // small timeout to allow transition
+
+      // Hide alert after 2 seconds
+      setTimeout(() => {
+        alert.classList.remove("show");
+        // Remove alert after transition
+        setTimeout(() => {
+          document.body.removeChild(alert);
+        }, 500); // match this time to CSS transition duration
+      }, 2000);
+    }
+    catch (error) {
       console.error("Sign in error:", error);
-      setError(error.message); // Set the error message to display to the user
+      setError("Incorrect UserEmail or Password !"); // Set the error message to display to the user
     }
   };
+
+
 
   return (
     <div
@@ -51,6 +75,17 @@ function SignIn() {
       <div className="card" style={{ width: "400px", padding: "20px" }}>
         <div className="card-body">
           <form onSubmit={handleSignIn}>
+            <div
+              className={`text-center mb-2 ${error ? "p-2" : ""}`}
+              style={{
+                border: `${error ? "1px solid #98bae742":""}`,
+                background: "#98bae742",
+                color: "red",
+              }}
+            >
+              {error}
+            </div>
+
             <div className="form-group input-group mb-3">
               <div
                 className="input-group-prepend"
