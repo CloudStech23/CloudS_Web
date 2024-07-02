@@ -22,12 +22,16 @@ import SignIn from './Components/Admin/Signin';
 import Demo from './Components/Career/Demo';
 import { AuthProvider } from './Components/Admin/Authcontext';
 import PrivateRoute from './Components/Admin/Protectroute';
-import Demo_second from '../src/Components/Admin/Demo_second'
+// import Demo_second from '../src/Components/Admin/Demo_second'
 import Demodetail from './Components/Career/Demodetail';
+import Alternetpage from './Components/Career/Alternetpage';
+import { useSelector } from 'react-redux';
  
 function App() {
   const token = localStorage.getItem('token');
   const isAuthenticated = token !== null; // Check if token exists
+
+  const isChecked = useSelector((state)=> state.checkbox.isChecked)
   return (
     <AuthProvider>
 
@@ -45,7 +49,7 @@ function App() {
           <Route exact path='/Software-Service' element={<SoftwareService/>} />
           <Route exact path='/ProductManagement-QA' element={<ProductManagementQA/>} />
           <Route exact path='/Support' element={<Contact/>} />
-          <Route exact path='/Career' element={<Career/>} />
+          <Route exact path='/Career' element={isChecked?<Career/>:<Alternetpage/>} />
           <Route exact path='/Machine-Learning' element={<MachineLearning/>} />
           <Route exact path='/Cloud-Services' element={<CloudServices/>} />
           <Route exact path='/DevOps' element={<DevOps/>} />
@@ -56,7 +60,7 @@ function App() {
           <Route exact path='/Signin' element={<SignIn/>} />
           <Route exact path='/Career/:id' element={<CareerDetails/>} />
           <Route exact path='/demo' element={<Demo/>} />
-          <Route exact path='/demo2' element={<Demo_second/>}></Route>
+          {/* <Route exact path='/demo2' element={<Demo_second/>}></Route> */}
           <Route path="/demodetail/:id" element={<Demodetail />} />
           
           

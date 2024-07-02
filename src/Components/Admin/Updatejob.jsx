@@ -1,18 +1,26 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import { database } from "./Firebase";
 import { ref, onValue, off, remove } from "firebase/database";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { toggleCheckbox } from "../../Redux/Slice";
+import { useDispatch,useSelector } from "react-redux";
 
 function Updatejob() {
   const [jobs, setJobs] = useState([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
+  const isChecked = useSelector((state)=>state.checkbox.isChecked)
+
+  const handleCheckboxChange = () => {
+    dispatch(toggleCheckbox());
+  };
 
   useEffect(() => {
     const jobRef = ref(database, "Career");
     const unsubscribe = onValue(jobRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        const formattedData = Object.keys(data).map(key => ({
+        const formattedData = Object.keys(data).map((key) => ({
           ...data[key],
           id: key,
         }));
@@ -28,14 +36,16 @@ function Updatejob() {
 
   const handleDelete = (id) => {
     const jobRef = ref(database, `Career/${id}`);
-    const jobToDelete = jobs.find(job => job.id === id);
+    const jobToDelete = jobs.find((job) => job.id === id);
 
     remove(jobRef)
       .then(() => {
-        setJobs(prevJobs => prevJobs.filter(job => job.id !== id));
-        alert(`Advertisement for "${jobToDelete.title}" Job is Deleted Successfully`);
+        setJobs((prevJobs) => prevJobs.filter((job) => job.id !== id));
+        alert(
+          `Advertisement for "${jobToDelete.title}" Job is Deleted Successfully`
+        );
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error removing job: ", error);
       });
   };
@@ -46,6 +56,15 @@ function Updatejob() {
 
   return (
     <div className="container mt-5 pt-4">
+      <div className="d-flex">
+        <div
+          className="rounded ms-auto"
+          style={{ padding: "5px", boxShadow: "#dbd3d3 0px 0px 6px 1px" }}
+        >
+          Display The Career Tab: <input type="checkbox" checked={isChecked} onChange={handleCheckboxChange} name="Career" id="" />
+        </div>
+      </div>
+
       <div className="row">
         {jobs.map((job) => (
           <div key={job.id} className="col-lg-4 col-md-6 col-12 mt-4 pt-2 mb-4">
@@ -62,13 +81,24 @@ function Updatejob() {
                     {job.company}
                   </span>
                   <span className="text-muted d-block">
-                    <i className="fa fa-map-marker" aria-hidden="true"></i> {job.location}
+                    <i className="fa fa-map-marker" aria-hidden="true"></i>{" "}
+                    {job.location}
                   </span>
                 </div>
 
                 <div className="mt-3">
-                  <button onClick={() => handleDelete(job.id)} className="btn Careerbtn-primary ms-2">Delete</button>
-                  <button onClick={() => handleUpdate(job)} className="btn Careerbtn-primary ms-2">Update</button>
+                  <button
+                    onClick={() => handleDelete(job.id)}
+                    className="btn Careerbtn-primary ms-2"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    onClick={() => handleUpdate(job)}
+                    className="btn Careerbtn-primary ms-2"
+                  >
+                    Update
+                  </button>
                 </div>
               </div>
             </div>

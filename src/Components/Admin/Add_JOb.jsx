@@ -389,6 +389,7 @@ function AddJob() {
         </div>
 
         <div className="text-center mt-4">
+          <p>Please review filled details once</p>
           <button className="signbtn2" type="submit">
             Submit Job Details
           </button>
