@@ -61,7 +61,7 @@ function Navbar() {
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
-                href='#'
+                href='/'
               >
                 About
               </a>
@@ -97,7 +97,7 @@ function Navbar() {
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
-                href='#'
+                href='/'
               >
                 Solutions
               </a>
@@ -117,7 +117,7 @@ function Navbar() {
                   onMouseEnter={() => setSubmenuHovered(true)}
                   onMouseLeave={() => setSubmenuHovered(false)}
                 >
-                  <a className="dropdown-item dropdown-toggle" href='#'>
+                  <a className="dropdown-item dropdown-toggle" href='/'>
                     Software Services
                   </a>
                   <ul className={`dropdown-menu ${submenuHovered ? 'show' : ''}`}>

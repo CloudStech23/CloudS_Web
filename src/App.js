@@ -49,7 +49,8 @@ function App() {
           <Route exact path='/Software-Service' element={<SoftwareService/>} />
           <Route exact path='/ProductManagement-QA' element={<ProductManagementQA/>} />
           <Route exact path='/Support' element={<Contact/>} />
-          <Route exact path='/Career' element={isChecked?<Career/>:<Alternetpage/>} />
+          {/* <Route exact path='/Career' element={isChecked?<Career/>:<Alternetpage/>} /> */} {/*Resolve the error  */}
+          <Route exact path='/Career' element={<Alternetpage/>}/>
           <Route exact path='/Machine-Learning' element={<MachineLearning/>} />
           <Route exact path='/Cloud-Services' element={<CloudServices/>} />
           <Route exact path='/DevOps' element={<DevOps/>} />

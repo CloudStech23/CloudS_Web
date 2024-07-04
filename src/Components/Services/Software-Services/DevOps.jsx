@@ -68,8 +68,8 @@ function DevOps() {
                 <img
                   src={img1}
                   class="img-fluid rounded"
-                  alt="Image"
                   style={{ height: "30rem", width: "33rem" }}
+                  alt=" error"
                 />
               </FadeOnScroll>
             </div>
@@ -81,7 +81,7 @@ function DevOps() {
           <div className="row">
             <div className="col-md-6 my-auto d-none d-lg-block">
               <FadeOnScroll animation="right">
-                <img src={img2} className="img-fluid rounded" alt="Image" />
+                <img src={img2} className="img-fluid rounded" alt=" error" />
               </FadeOnScroll>
             </div>
 
