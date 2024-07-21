@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "./Firebase";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import "../Admin/Admin.css";
 
 function SignIn() {
@@ -150,6 +150,9 @@ function SignIn() {
                 Login
               </button>
             </div>
+             <div className="container d-flex mt-2 justify-content-center align-items-center">
+              <Link to='/Forget_Password'>Forget password!</Link> 
+             </div>
           </form>
         </div>
       </div>

@@ -26,6 +26,7 @@ import PrivateRoute from './Components/Admin/Protectroute';
 import Demodetail from './Components/Career/Demodetail';
 import Alternetpage from './Components/Career/Alternetpage';
 import { useSelector } from 'react-redux';
+import ForgetPassword from './Components/Admin/ForgetPassword';
  
 function App() {
   const token = localStorage.getItem('token');
@@ -63,6 +64,7 @@ function App() {
           <Route exact path='/demo' element={<Demo/>} />
           {/* <Route exact path='/demo2' element={<Demo_second/>}></Route> */}
           <Route path="/demodetail/:id" element={<Demodetail />} />
+          <Route path="/Forget_Password" element={<ForgetPassword />} />
           
           
         </Routes>
