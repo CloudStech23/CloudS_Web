@@ -151,7 +151,7 @@ function SignIn() {
               </button>
             </div>
              <div className="container d-flex mt-2 justify-content-center align-items-center">
-              <Link to='/Forget_Password'>Forget password!</Link> 
+              {/* <Link to='/Forget_Password'>Forget password!</Link>  */}
              </div>
           </form>
         </div>
