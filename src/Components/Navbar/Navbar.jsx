@@ -61,7 +61,7 @@ function Navbar() {
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
-                href='/'
+                
               >
                 About
               </a>
@@ -97,7 +97,7 @@ function Navbar() {
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
-                href='/'
+                 
               >
                 Solutions
               </a>
