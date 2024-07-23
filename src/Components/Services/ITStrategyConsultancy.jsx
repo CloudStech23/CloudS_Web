@@ -31,7 +31,7 @@ function ITStrategyConsultancy() {
                   </FadeOnScroll>
                 </div>
               </div>
-              <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+              <div class="col-xl-5 col-xxl-6  d-none d-xl-block text-center">
                 <FadeOnScroll>
                   <iframe
                     style={{ height: "25rem", width: "37.5rem" }}

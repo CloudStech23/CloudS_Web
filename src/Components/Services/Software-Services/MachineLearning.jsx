@@ -37,7 +37,7 @@ function MachineLearning() {
               <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 {/* Image */}
                 <div
-                  className="position-relative overflow-hidden h-100"
+                  className="position-relative overflow-hidden h-100 d-none d-xl-block"
                   style={{ minHeight: "400px" }}
                 >
                   <FadeOnScroll animation="right">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import LogoImg from '../Images/cloudslogo.png';
 import { Link } from 'react-router-dom';
 import '../Navbar/Navbar.css';
@@ -18,9 +18,21 @@ function Navbar() {
       return '/Signin'; // Redirect to sign-in page if user is not authenticated
     }
   };
+
   const [dropdownHovered, setDropdownHovered] = useState(false);
   const [dropdownHovered2, setDropdownHovered2] = useState(false);
   const [submenuHovered, setSubmenuHovered] = useState(false);
+
+  // Ref for the navbar collapse element
+  const handleLinkClick = () => {
+    const collapseElement = document.querySelector('#navbarSupportedContent');
+    if (collapseElement) {
+      const bsCollapse = new window.bootstrap.Collapse(collapseElement, {
+        toggle: false
+      });
+      bsCollapse.hide();
+    }
+  };
 
   return (
     <nav className='navbar navbar-expand-lg navbar-dark' style={{ backgroundColor: '#1e232e', transition: '.3s' }}>
@@ -47,7 +59,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <li className="nav-item underline-hover">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/" onClick={handleLinkClick}>
                 Home
               </Link>
             </li>
@@ -57,11 +69,9 @@ function Navbar() {
               
               <a
                 className="nav-link dropdown-toggle"
-                 
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
-                
               >
                 About
               </a>
@@ -72,19 +82,11 @@ function Navbar() {
                 onMouseLeave={() => setDropdownHovered2(false)}
               >
                 <li>
-                  <Link className="dropdown-item menu-item" to="/About-Us">
+                  <Link className="dropdown-item menu-item" to="/About-Us" onClick={handleLinkClick}>
                     Who Are We?
                   </Link>
                 </li>
-                {/* <li>
-                  <Link className="dropdown-item menu-item" to="">
-                    Proud Customers
-                  </Link>
-                </li> */}
-                </ul>
-
-
-               
+              </ul>
             </li>
             <li
               className={`nav-item dropdown ${dropdownHovered ? 'show' : ''}`}
@@ -93,11 +95,9 @@ function Navbar() {
             >
               <a
                 className="nav-link dropdown-toggle"
-                 
                 id="navbarDropdownSolutions"
                 role="button"
                 aria-expanded="false"
-                 
               >
                 Solutions
               </a>
@@ -108,7 +108,7 @@ function Navbar() {
                 onMouseLeave={() => setDropdownHovered(false)}
               >
                 <li>
-                  <Link className="dropdown-item menu-item" to="/It-Strategy-Consultancy">
+                  <Link className="dropdown-item menu-item" to="/It-Strategy-Consultancy" onClick={handleLinkClick}>
                     IT Strategy Consultancy
                   </Link>
                 </li>
@@ -117,53 +117,49 @@ function Navbar() {
                   onMouseEnter={() => setSubmenuHovered(true)}
                   onMouseLeave={() => setSubmenuHovered(false)}
                 >
-                  <a className="dropdown-item dropdown-toggle" href='/'>
+                  <a className="dropdown-item dropdown-toggle"  >
                     Software Services
                   </a>
                   <ul className={`dropdown-menu ${submenuHovered ? 'show' : ''}`}>
-                    {/* Add submenu items here */}
                     <li>
-                      <Link className="dropdown-item" to="/Machine-Learning">
+                      <Link className="dropdown-item" to="/Machine-Learning" onClick={handleLinkClick}>
                         Machine Learning
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/Cloud-Services">
+                      <Link className="dropdown-item" to="/Cloud-Services" onClick={handleLinkClick}>
                         Cloud Service
                       </Link>
                     </li>
                     <li>
-                      <Link className="dropdown-item" to="/DevOps">
+                      <Link className="dropdown-item" to="/DevOps" onClick={handleLinkClick}>
                         DevOps
                       </Link>
                     </li>
-                    {/* Add more submenu items if needed */}
                   </ul>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/ProductManagement-QA">
+                  <Link className="dropdown-item" to="/ProductManagement-QA" onClick={handleLinkClick}>
                     Product Management & QA
                   </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to='/Career'>
+              <Link className="nav-link" to='/Career' onClick={handleLinkClick}>
                 Career
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/Support">
+              <Link className="nav-link" to="/Support" onClick={handleLinkClick}>
                 Contact
               </Link>
             </li>
-             
             <li className="nav-item">
-              <Link className="nav-link" to={handleNavigation()}>
+              <Link className="nav-link" to={handleNavigation()} onClick={handleLinkClick}>
                 <i className="fa fa-user-circle-o" title='Admin Dashboard' aria-hidden="true"></i>
               </Link>
             </li>
-             
           </ul>
         </div>
       </div>

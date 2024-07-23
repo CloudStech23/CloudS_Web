@@ -18,6 +18,7 @@ function DevOps() {
         viewBox="0 0 1440 100"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
+        className="d-none d-xl-block"
       >
         <defs>
           <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
@@ -63,7 +64,7 @@ function DevOps() {
               </div>
             </div>
 
-            <div class="col-md-6 my-auto  d-none d-lg-block">
+            <div class="col-md-6 my-auto   ">
               <FadeOnScroll animation="left">
                 <img
                   src={img1}

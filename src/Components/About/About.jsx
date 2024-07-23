@@ -129,7 +129,7 @@ function About() {
       <section class="py-5 position-relative bg-light">
         <div class="container px-5 my-5">
           <div class="row gx-5 align-items-center">
-            <div class="col-lg-6 order-first order-lg-last">
+            <div class="col-lg-6 order-first order-lg-last d-none d-xl-block">
               <FadeOnScroll animation="down">
                 <img
                   class="img-fluid rounded mb-5 mb-lg-0"
@@ -152,7 +152,7 @@ function About() {
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1440 320"
-          class="wave-svg position-absolute bottom-0 start-0"
+          className="wave-svg position-absolute bottom-0 start-0 d-none d-xl-block"
         >
           <path
             fill="#343a40"

@@ -57,7 +57,7 @@ function Contact() {
   return (
     <section className="py-3 py-md-5">
       <div className="container">
-        <div className="row gy-3 gy-md-4 gy-lg-0 align-items-lg-center">
+        <div className="row gy-3 gy-md-4 gy-lg-0 p-2 align-items-lg-center">
           <div className=" col-12 col-lg-6 wow fadeIn leftside-design" data-wow-delay="0.1s">
             <FadeOnScroll>
               <h1 className="display-6 fw-normal mb-2 text-light">Contact With Us Now!</h1>

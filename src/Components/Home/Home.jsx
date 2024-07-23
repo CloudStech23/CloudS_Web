@@ -74,15 +74,15 @@ function Home() {
       <div className="container-xxl mt-4 bg-light rounded py-5">
         <div className="container">
           <div className="row g-5">
-            <div className="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+            <div className="col-lg-6 wow fadeInUp d-none d-xl-block" data-wow-delay="0.1s">
               {/* Image */}
               <div
-                className="position-relative overflow-hidden h-100"
+                className="position-relative overflow-hidden h-100 "
                 style={{ minHeight: "400px" }}
               >
                 <FadeOnScroll animation="right">
                   <img
-                    className="img-fluid rounded-3 my-5"
+                    className="img-fluid rounded-3 my-5 "
                     src={WhoImg1}
                     alt="..."
                   />
@@ -528,7 +528,7 @@ function Home() {
                   alt="..."
                 /> */}
                 <iframe
-                  className="img-fluid rounded"
+                  className="img-fluid rounded d-none d-xl-block"
                   src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14653.805620593368!2d76.0430372!3d23.3356551!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3963670062b66555%3A0xfa5c9876e7c27b41!2sCloudstry%20Technology%20Private%20Limited!5e0!3m2!1sen!2sin!4v1712743996577!5m2!1sen!2sin"
                   style={{ border: 0, height: "25rem", width: "40rem" }}
                   allowfullscreen=""
